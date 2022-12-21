@@ -1,0 +1,12 @@
+[user]
+	name = beenawhile
+	email = beenawhile@users.noreply.github.com
+[core]
+	excludesfile = ~/.gitignore_global
+    	editor = nvim
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
+[commit]
+  template = ~/.gitmessage

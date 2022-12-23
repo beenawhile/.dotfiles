@@ -2,7 +2,7 @@
 	name = beenawhile
 	email = beenawhile@users.noreply.github.com
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore
     	editor = nvim
 [pull]
 	ff = only

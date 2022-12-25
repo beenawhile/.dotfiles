@@ -82,35 +82,23 @@ return require('packer').startup(function(use)
 
   use { 'nvim-treesitter/nvim-treesitter' }
 
-  -- LSP
-  use {
-    'tami5/lspsaga.nvim',
-    requires = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' },
-      {
-        'williamboman/mason.nvim',
-        config = function()
-          require("mason").setup()
-        end
-      },
-      { 'williamboman/mason-lspconfig.nvim' },
-
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },
-      { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-path' },
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-nvim-lua' },
-
-      -- Command Line
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'hrsh7th/cmp-cmdline'},
-    }
+  -- LSP Support
+  use { 'neovim/nvim-lspconfig' }
+  use { 'neoclide/coc.nvim',
+    branch='master',
   }
+  use { 'lervag/vimtex' }
+
+  -- Autocompletion
+  use { 'hrsh7th/nvim-cmp' }
+  use { 'saadparwaiz1/cmp_luasnip' }
+  use { 'hrsh7th/cmp-nvim-lua' }
+
+  -- Command Line
+  use {'hrsh7th/cmp-nvim-lsp'}
+  use {'hrsh7th/cmp-buffer'}
+  use {'hrsh7th/cmp-path'}
+  use {'hrsh7th/cmp-cmdline'}
 
   use {
     "j-hui/fidget.nvim",
@@ -123,13 +111,11 @@ return require('packer').startup(function(use)
   -- Debugger
   use { 'mfussenegger/nvim-dap' }
 
-  -- for flutter
-  use { 'akinsho/flutter-tools.nvim', requires={{'nvim-lua/plenary.nvim'}} }
   -- for dart
-  use { 'dart-lang/dart-vim-plugin' }
+  -- use { 'dart-lang/dart-vim-plugin' }
 
   -- for rust
-  use { "simrat39/rust-tools.nvim" }
+  use { "rust-lang/rust.vim" }
 
   -- inspector
   use { 'puremourning/vimspector' }

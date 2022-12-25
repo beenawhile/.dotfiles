@@ -1,0 +1,62 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "markdown",
+    "rust",
+    "dart",
+    "golang",
+    "json"
+  ],
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": [
+        "start"
+      ],
+      "filetypes": [
+        "sh",
+        "bash"
+      ],
+      "ignoredRootPaths": [
+        "~"
+      ]
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ]
+    },
+    "dart": {
+      "command": "dart_language_server",
+      "args": [],
+      "filetypes": [
+        "dart"
+      ],
+      "initializationOptions": {},
+      "settings": {
+        "dart": {
+          "validation": {},
+          "completion": {}
+        }
+      }
+    }
+  },
+  "diagnostic-languageserver.filetypes": {
+    "sh": "shellcheck"
+  },
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤",
+  "suggest.noselect": false,
+  "suggest.echodocSupport": true,
+  "codeLens.enable": true,
+  "signature.enable": true,
+  "suggest.preferCompleteThanJumpPlaceholder": true
+}

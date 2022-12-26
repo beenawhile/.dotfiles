@@ -20,13 +20,9 @@ source_if_exists /opt/homebrew/etc/profile.d/z.sh
 export PATH="$PATH:/usr/local/sbin:$DOTFILES/bin:$HOME/.local/bin"
 # brew-related
 export PATH=/opt/homebrew/bin:$PATH
-# dart
+# dart-related
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 eval "$(starship init zsh)"
-
-echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh

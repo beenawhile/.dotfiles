@@ -1,4 +1,5 @@
 format = """
+$os\
 $username\
 $hostname\
 $directory\
@@ -8,14 +9,30 @@ $git_status\
 $git_metrics\
 $fill\
 $dart\
-$flutter\
 $rust\
+$golang\
 $python\
 $cmd_duration $jobs $time\
+$battery\
 $line_break\
 $character"""
 
 add_newline = true
+command_timeout = 1000
+
+[os]
+disabled = false
+
+[username]
+style_user = 'white bold'
+style_root = 'white bold'
+format = 'user: [$user]($style)'
+disabled = false
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
 
 [fill]
 symbol = " "
@@ -61,7 +78,7 @@ style = "yellow"
 symbol = " "
 
 [rust]
-symbol = " "
+format = '[$symbol($version)]($style)'
 
 [time]
 disabled = false
@@ -76,3 +93,7 @@ format = "[TUNNEL OPEN for $output]($style)"
 
 [dart]
 format = '[$symbol($version)]($style)'
+
+[golang]
+format = '[$symbol($version)]($style)'
+version_format = 'v${raw}'

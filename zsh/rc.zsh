@@ -26,3 +26,8 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 eval "$(starship init zsh)"
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+## [Completion] 
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/admin/.dart-cli-completion/zsh-config.zsh ]] && . /Users/admin/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

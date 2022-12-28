@@ -3,10 +3,12 @@ alias rm='trash -v'
 alias ls='exa'
 alias ll='exa -alh'
 alias vim='nvim'
+alias vi='nvim'
 alias cat='bat'
 alias trim="awk '{\$1=\$1;print}'"
-
 alias ta='tmux attach -t'
+
+alias wtr='curl wttr.in'
 
 # GIT ALIASES -----------------------------------------------------------------
 alias gc='git commit'

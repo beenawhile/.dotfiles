@@ -10,7 +10,8 @@ lsp.ensure_installed({
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure(
+  'sumneko_lua', {
   settings = {
     Lua = {
       diagnostics = {
@@ -20,22 +21,22 @@ lsp.configure('sumneko_lua', {
   }
 })
 
-lsp.setup_servers({ 'dartls', 'vls', force = true })
+lsp.configure('dartls', { force_setup = true })
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
   ["<Tab>"] = cmp.mapping.confirm({
     behavior = cmp.ConfirmBehavior.Insert,
     select = true,
   }),
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<CR>"] = nil,
-  ["<S-Tab>"] = nil,
 })
+
+cmp_mappings["<CR>"] = nil
+cmp_mappings["<S-Tab>"] = nil
 
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings

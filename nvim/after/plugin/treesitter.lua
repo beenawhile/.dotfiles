@@ -1,7 +1,7 @@
--- Treesitter Plugin Setup 
+-- Treesitter Plugin Setup
 require('nvim-treesitter.configs').setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "help", "javascript",  "typescript", "lua", "rust", "toml", "yaml", "dart" },
+  ensure_installed = { "help", "lua", "rust", "toml", "yaml", "dart" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -20,7 +20,7 @@ require('nvim-treesitter.configs').setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
-  ident = { enable = true }, 
+  ident = { enable = true },
   rainbow = {
     enable = true,
     extended_mode = true,
@@ -32,6 +32,6 @@ require('nvim-treesitter.configs').setup {
 vim.opt.list = true
 
 require("indent_blankline").setup {
-    show_current_context = true,
-    show_current_context_start = true,
+  show_current_context = true,
+  show_current_context_start = true,
 }

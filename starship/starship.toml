@@ -38,13 +38,13 @@ discharging_symbol = '💀 '
 symbol = " "
 
 [directory]
-style = "blue"
+style = "blue bold"
 read_only = " "
 truncation_length = 4
 truncate_to_repo = false
 
 [character]
-success_symbol = "[❯](purple)"
+success_symbol = "[❯](white)"
 error_symbol = "[❯](red)"
 vicmd_symbol = "[❮](green)"
 

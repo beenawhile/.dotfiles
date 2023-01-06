@@ -1,0 +1,2 @@
+$DOTFILES/skhd/rc.zsh=$HOME/.skhdrc
+$DOTFILES/skhd/scripts =$HOME/.config/yabai/scripts

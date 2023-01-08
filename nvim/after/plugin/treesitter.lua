@@ -1,5 +1,10 @@
 -- Treesitter Plugin Setup
-require('nvim-treesitter.configs').setup {
+local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+if not status_ok then
+  return
+end
+
+configs.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "help", "lua", "rust", "toml", "yaml", "dart" },
 
@@ -20,18 +25,10 @@ require('nvim-treesitter.configs').setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
-  ident = { enable = true },
+  ident = { enable = true, disable = { "yaml" } },
   rainbow = {
     enable = true,
     extended_mode = true,
     max_file_lines = nil,
   }
-}
-
--- indentation color setup
-vim.opt.list = true
-
-require("indent_blankline").setup {
-  show_current_context = true,
-  show_current_context_start = true,
 }

@@ -16,6 +16,16 @@ cmd mkfile ${{
   $EDITOR $ans
 }}
 
+cmd chmod ${{
+  printf "Mode Bits: "
+  read ans
+
+  for file in "$fx"
+  do
+    chmod $ans $file
+  done
+}}
+
 cmd setwallpaper %cp "$f" ~/.config/wall.jpg && xwallpaper --zoom "$f"
 
 cmd trash ${{
@@ -75,6 +85,7 @@ map <enter> open
 map R reload
 map mf mkfile
 map md mkdir
+map ch chmod
 map bg setwallpaper
 map C clear
 

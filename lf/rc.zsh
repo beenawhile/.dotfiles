@@ -1,5 +1,7 @@
 # Basic Settings
 set hidden true
+set preview true
+set drawbox true
 set ignorecase true
 set icons true
 
@@ -13,7 +15,7 @@ cmd mkdir ${{
 cmd mkfile ${{
   printf "File Name: "
   read ans
-  $EDITOR $ans
+  touch $ans
 }}
 
 cmd chmod ${{
@@ -26,10 +28,20 @@ cmd chmod ${{
   done
 }}
 
-cmd setwallpaper %cp "$f" ~/.config/wall.jpg && xwallpaper --zoom "$f"
+# cmd setwallpaper %cp "$f" ~/.config/wall.jpg && xwallpaper --zoom "$f"
 
 cmd trash ${{
   trash-put "$f"
+}}
+
+cmd fzf_jump ${{
+  res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
+  if [ -f "$res" ]; then
+    cmd = "select"
+  elif [ -d "$res" ]; then
+    cmd="cd"
+  fi
+  lf -remote "send $id $cmd \"$res\""
 }}
 
 # Archive bindings
@@ -62,6 +74,8 @@ cmd restore_trash ${{
   trash-restore
 }}
 
+cmd clear_trash %trash-empty
+
 # Bindings
 # Remove some defaults
 map m
@@ -89,8 +103,10 @@ map ch chmod
 map bg setwallpaper
 map C clear
 
+map f fzf_jump
 map dd trash
 map dr restore_trash
+map ee $$EDITOR "$f"
 
 # Movement
 map gd cd ~/documents

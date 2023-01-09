@@ -41,9 +41,11 @@ packer.init {
 return packer.startup(function(use)
 
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp
+  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+  use "moll/vim-bbye"
+  use "akinsho/toggleterm.nvim"
 
   -- telescope
   use {
@@ -69,7 +71,6 @@ return packer.startup(function(use)
 
   -- git
   use 'lewis6991/gitsigns.nvim'
-  use { 'tpope/vim-fugitive' }
 
   -- icons
   use { 'kyazdani42/nvim-web-devicons' }

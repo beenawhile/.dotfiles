@@ -4,7 +4,6 @@ local servers = {
   "yamlls",
 }
 
-
 local settings = {
   ui = {
     border = "none",

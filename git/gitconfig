@@ -1,6 +1,6 @@
 [user]
-	name = beenawhile
-	email = beenawhile@users.noreply.github.com
+	name = youngmin-gwon
+	email = youngmin-gwon@users.noreply.github.com
 [core]
 	excludesfile = ~/.gitignore
     	editor = nvim

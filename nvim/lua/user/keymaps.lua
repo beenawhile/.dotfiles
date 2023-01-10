@@ -21,7 +21,7 @@ vim.g.mapleader = " "
 -- Normal --
 -- Better window navigation
 keymap("n", "<leader>w", ":w<CR>", opts)
-keymap("n", "<leader>c", ":Bdelete<CR>", opts)
+keymap("n", "<leader>c", ":Bdelete!<CR>", opts)
 keymap("n", "<leader>sr", ":vsplit<CR>", opts)
 keymap("n", "<leader>sb", ":split<CR>", opts)
 keymap("n", "<C-h>", "<C-w>h", opts)

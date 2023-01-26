@@ -40,6 +40,10 @@ packer.init {
 
 return packer.startup(function(use)
 
+  if vim.g.vscode then
+    use "asvetliakov/vim-easymotion"
+  end
+
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp

@@ -1,6 +1,6 @@
 if vim.g.vscode then
   -- VSCode extension
-  vim.cmd [[source $HOME/.config/nvim/vscode/init.vim]]
+  require("vscode")
 else
   -- ordinary Neovim
   require("user")

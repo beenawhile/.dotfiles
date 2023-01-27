@@ -40,9 +40,7 @@ packer.init {
 
 return packer.startup(function(use)
 
-  if vim.g.vscode then
-    use "asvetliakov/vim-easymotion"
-  end
+  use "asvetliakov/vim-easymotion"
 
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
@@ -168,7 +166,26 @@ return packer.startup(function(use)
   use { 'rafamadriz/friendly-snippets' } -- a bunch of snippets to use
 
   -- flutter only
-  use { 'thosakwe/vim-flutter' }
+  -- use { 'thosakwe/vim-flutter' }
+  use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require("flutter-tools").setup({
+        enable = true,
+        flutter_lookup_cmd = "asdf where flutter",
+        decorations = {
+          statusline = {
+            -- set to true to be able use the 'flutter_tools_decorations.app_version' in your statusline
+            -- this will show the current version of the flutter app from the pubspec.yaml file
+            app_version = false,
+            -- set to true to be able use the 'flutter_tools_decorations.device' in your statusline
+            -- this will show the currently running device if an application was started with a specific
+            -- device
+            device = true,
+          }
+        },
+      })
+    end
+  }
 
   -- inspector
   use { 'puremourning/vimspector' }

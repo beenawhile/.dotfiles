@@ -40,8 +40,6 @@ packer.init {
 
 return packer.startup(function(use)
 
-  use "asvetliakov/vim-easymotion"
-
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp
@@ -189,6 +187,13 @@ return packer.startup(function(use)
 
   -- inspector
   use { 'puremourning/vimspector' }
+
+  -- leap
+  use { 'ggandor/leap.nvim' ,
+    config = function()
+      require("leap").add_default_mappings()
+    end
+}
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This project is dedicated to persist dev-setup with a couple of linking configurations and shell scripts. All configuration is heavily from by [Andrew Burgess's dotfiles](https://www.youtube.com/watch?v=5oXy6ktYs7I) and customized for this person.
+This project is dedicated to persist dev-setup with a couple of linking configurations and shell scripts. All configuration is heavily from [Andrew Burgess's dotfiles](https://www.youtube.com/watch?v=5oXy6ktYs7I) and customized for this person.
 
 ## Setups
 

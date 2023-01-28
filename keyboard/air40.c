@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_RAISE] = LAYOUT_ortho_4x12(
         KC_GRV,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,
         KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_RCBR, KC_PIPE,
-        _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______, KC_NUHS, KC_NUBS, KC_PGUP, KC_PGDN, _______,
+        _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______, KC_LBRC, KC_RBRC, KC_PGUP, KC_PGDN, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_BRID, KC_BRIU, KC_WAKE 
     ),
     [_NUMPAD] = LAYOUT_ortho_4x12(

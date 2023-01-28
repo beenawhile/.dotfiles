@@ -33,8 +33,8 @@ vim.g.mapleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<leader>w", ":w<CR>", opts)
-keymap("n", "<leader>c", ":Bdelete!<CR>", opts)
+keymap("n", "<leader>ww", ":Format<CR>:w<CR>", opts)
+keymap("n", "<leader>bd", ":Bdelete!<CR>", opts)
 keymap("n", "<leader>sr", ":vsplit<CR>", opts)
 keymap("n", "<leader>sb", ":split<CR>", opts)
 
@@ -96,7 +96,8 @@ keymap("i", "<C-c>", "<Esc>", opts)
 
 keymap("n", "Q", "<nop>", opts)
 keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", opts)
-keymap("n", "<leader>f", "lua vim.lsp.buf.format()<CR>", opts)
+-- keymap("n", "<leader>f", "lua vim.lsp.buf.formatting {async=true}<CR>", opts)
+keymap("n", "<leader>f", ":Format<CR>", opts)
 
 keymap("n", "<C-k>", "<cmd>cnext<CR>zz", opts)
 keymap("n", "<C-j>", "<cmd>cprev<CR>zz", opts)

@@ -10,6 +10,7 @@ source_if_exists $DOTFILES/zsh/history.zsh
 source_if_exists $DOTFILES/zsh/git.zsh
 source_if_exists $DOTFILES/zsh/config.zsh
 source_if_exists $DOTFILES/zsh/packages.zsh
+source_if_exists $DOTFILES/zsh/functions.zsh
 source_if_exists ~/.fzf.zsh
 source_if_exists ~/.config/.fun.sh
 source_if_exists $DOTFILES/zsh/aliases.zsh

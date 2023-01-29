@@ -61,7 +61,7 @@ local function lsp_highlight_document(client)
 end
 
 local function lsp_keymaps(bufnr)
-  local opts = { noremap = true, silent = true, remap = false }
+  local opts = { noremap = true, silent = true }
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)

@@ -33,7 +33,7 @@ vim.g.mapleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<leader>ww", ":Format<CR>:w<CR>", opts)
+keymap("n", "<leader>w", ":Format<CR>:w<CR>", opts)
 keymap("n", "<leader>bd", ":Bdelete!<CR>", opts)
 keymap("n", "<leader>sr", ":vsplit<CR>", opts)
 keymap("n", "<leader>sb", ":split<CR>", opts)

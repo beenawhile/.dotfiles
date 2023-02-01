@@ -23,4 +23,5 @@ AUDIO_SUPPORTED = no
 KEY_LOCK_ENABLE = yes
 
 LAYOUTS = ortho_4x12
+WAIT_FOR_USB = yes
 

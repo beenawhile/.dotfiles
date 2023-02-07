@@ -696,5 +696,5 @@
         }
     ],
     "editor.minimap.enabled": false,
-    "workbench.activityBar.visible": false,
+    "editor.accessibilitySupport": "off",
 }

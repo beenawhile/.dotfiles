@@ -6,7 +6,7 @@ function watch_flutter_and_test() {
   while true
   do
     # { git ls-files; git ls-files . --exclude-standard --others; } | entr -d flutter test
-    ls -d **/*.dart | entr -d flutter test --coverage
+    ls -d **/*.dart | entr -d flutter test --coverage --test-randomize-ordering-seed random
   done
 }
 

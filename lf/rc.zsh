@@ -76,6 +76,21 @@ cmd restore_trash ${{
 
 cmd clear_trash %trash-empty
 
+cmd open &{{
+	mimetype=$(file --brief --dereference --mime-type $f)
+	defapp=$(xdg-mime query default $mimetype)
+	case "$defapp" in
+	nvim.desktop)
+        lf -remote "send $id \$nvim $f"
+		;;
+	vim.desktop)
+        lf -remote "send $id \$vim $f"
+		;;
+	*)
+		open $f
+	esac
+}}
+
 # Bindings
 # Remove some defaults
 map m

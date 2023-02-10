@@ -152,6 +152,7 @@ return packer.startup(function(use)
   -- use { 'jose-elias-alvarez/null-ls.nvim' }
 
   -- Autocompletion
+  use { 'onsails/lspkind-nvim' } -- The completion plugin
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
   use { 'hrsh7th/cmp-buffer' } -- buffer completions
   use { 'hrsh7th/cmp-path' } -- path completions

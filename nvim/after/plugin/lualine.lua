@@ -1,12 +1,3 @@
-local colorscheme = "catpuccin"
-local status_ok, theme = pcall(require, "lualine.themes" .. colorscheme)
-if not status_ok then
-  vim.notify("colorscheme " .. colorscheme .. " not found!")
-  return
-end
-
-theme.normal.c.bg = nil
-
 local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
 end
@@ -30,7 +21,7 @@ local diff = {
 
 require("lualine").setup({
   options = {
-    theme = theme,
+    theme = "catppuccin",
     icons_enabled = true,
     always_divide_middle = false,
     section_separators = { left = "", right = "" },

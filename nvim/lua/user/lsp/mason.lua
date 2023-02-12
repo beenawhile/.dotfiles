@@ -1,7 +1,9 @@
 local servers = {
-  "sumneko_lua",
+  "lua_ls",
   "rust_analyzer",
   "yamlls",
+  "tsserver",
+  "html",
 }
 
 local settings = {
@@ -34,10 +36,17 @@ end
 local opts = {}
 
 for _, server in pairs(servers) do
-  opts = {
-    on_attach = require("user.lsp.handlers").on_attach,
-    capabilities = require("user.lsp.handlers").capabilities,
-  }
+  if (server == "lua_ls" or server == "html") then
+    opts = {
+      on_attach = require("user.lsp.handlers").on_attach_lua,
+      capabilities = require("user.lsp.handlers").capabilities,
+    }
+  else
+    opts = {
+      on_attach = require("user.lsp.handlers").on_attach,
+      capabilities = require("user.lsp.handlers").capabilities,
+    }
+  end
 
   server = vim.split(server, "@")[1]
 

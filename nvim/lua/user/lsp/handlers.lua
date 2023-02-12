@@ -14,8 +14,7 @@ M.setup = function()
   end
 
   local config = {
-    -- disable virtual text
-    virtual_text = false,
+    virtual_text = true,
     -- show signs
     signs = {
       active = signs,
@@ -77,7 +76,7 @@ local function lsp_keymaps(bufnr)
   vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
   vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
   vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format{ async = true }' ]]
+  -- vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format{ async = true }' ]]
 
   -- vim.api.nvim_create_autocmd("BufWritePre", {
   --   group = vim.api.nvim_create_augroup("Format", { clear = true }),
@@ -86,12 +85,68 @@ local function lsp_keymaps(bufnr)
   -- })
 end
 
+local protocol = require('vim.lsp.protocol')
+protocol.CompletionItemKind = {
+  '', -- Text
+  '', -- Method
+  '', -- Function
+  '', -- Constructor
+  '', -- Field
+  '', -- Variable
+  '', -- Class
+  'ﰮ', -- Interface
+  '', -- Module
+  '', -- Property
+  '', -- Unit
+  '', -- Value
+  '', -- Enum
+  '', -- Keyword
+  '﬌', -- Snippet
+  '', -- Color
+  '', -- File
+  '', -- Reference
+  '', -- Folder
+  '', -- EnumMember
+  '', -- Constant
+  '', -- Struct
+  '', -- Event
+  'ﬦ', -- Operator
+  '', -- TypeParameter
+}
+
+local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
+
+local function lsp_format(client)
+  -- formatting
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_command [[augroup Format]]
+    vim.api.nvim_command [[autocmd! * <buffer>]]
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format {async = true} ]]
+    vim.api.nvim_command [[augroup END]]
+  end
+end
+
+local enable_format_on_save = function(_, bufnr)
+  vim.api.nvim_clear_autocmds({ group = augroup_format, buffer = bufnr })
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    group = augroup_format,
+    buffer = bufnr,
+    callback = function()
+      vim.lsp.buf.format({ bufnr = bufnr })
+    end,
+  })
+end
+
 M.on_attach = function(client, bufnr)
-  -- if client.name == "tsserver" then
-  --   client.server_capabilities.documentFormattingProvider = false
-  -- end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
+  lsp_format(client)
+end
+
+M.on_attach_lua = function(client, bufnr)
+  lsp_keymaps(bufnr)
+  lsp_highlight_document(client)
+  enable_format_on_save(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

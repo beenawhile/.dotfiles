@@ -8,12 +8,19 @@ vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.opt.title = true
+
 -- indent
 vim.opt.softtabstop = 2
 vim.opt.smartindent = true
+vim.opt.autoindent = true
 vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 2 -- insert 2 spaces for a tab
+
+-- undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m]"]])
+vim.cmd([[let &t_Ce = "\e[4:0m]"]])
 
 -- backup
 vim.opt.backup = false
@@ -56,6 +63,10 @@ vim.opt.cursorline = true -- highlight the current line
 vim.opt.list = true
 
 vim.opt.shortmess:append "c"
+
+vim.opt.backspace = { 'start', 'eol', 'indent' }
+vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
+vim.opt.wildignore:append { '*/node_modules/*' }
 
 -- cmd: wrap vimscript in lua
 vim.cmd "set whichwrap+=<,>,[,],h,l"

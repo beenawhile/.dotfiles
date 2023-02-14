@@ -33,12 +33,19 @@ vim.g.mapleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<leader>w", ":Format<CR>:w<CR>", opts)
-keymap("n", "<leader>bd", ":Bdelete!<CR>", opts)
-keymap("n", "<leader>sr", ":vsplit<CR>", opts)
-keymap("n", "<leader>sb", ":split<CR>", opts)
+keymap("n", "sh", "<C-w>h", opts)
+keymap("n", "sj", "<C-w>j", opts)
+keymap("n", "sk", "<C-w>k", opts)
+keymap("n", "sl", "<C-w>l", opts)
+keymap("n", "s<left>", "<C-w>h", opts)
+keymap("n", "s<down>", "<C-w>j", opts)
+keymap("n", "s<up>", "<C-w>k", opts)
+keymap("n", "s<right>", "<C-w>l", opts)
+keymap("n", "sr", ":vsplit<CR>", opts)
+keymap("n", "sb", ":split<CR>", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<leader>w", ":w<CR>", opts)
+keymap("n", "<leader>bd", ":Bdelete!<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<A-Up>", ":resize +2<CR>", opts)
@@ -106,3 +113,9 @@ keymap("n", "<leader>j", "<cmd>lprev<CR>zz", opts)
 
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", opts)
+
+-- Increment/decrement
+keymap("n", "+", '<C-a>', opts)
+keymap("n", "-", '<C-x>', opts)
+-- Delete a word backwards
+keymap("n", "dw", 'vb"_d"', opts)

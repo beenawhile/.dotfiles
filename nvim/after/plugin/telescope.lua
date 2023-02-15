@@ -5,6 +5,12 @@ end
 
 local actions = require "telescope.actions"
 
+local function telescope_buffer_dir()
+  return vim.fn.expand('%:p:h')
+end
+
+local fb_actions = require 'telescope'.extensions.file_browser.actions
+
 telescope.setup {
   defaults = {
     prompt_prefix = " ",
@@ -44,6 +50,7 @@ telescope.setup {
       },
 
       n = {
+        ["q"] = actions.close,
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
@@ -74,29 +81,80 @@ telescope.setup {
 
         ["?"] = actions.which_key,
       },
+
     },
   },
   -- pickers = {
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
+  -- Default configuration for builtin pickers goes here:
+  -- picker_name = {
+  --   picker_config_key = value,
+  --   ...
+  -- }
+  -- Now the picker_config_key will be applied every time you call this
+  -- builtin picker
   -- },
   extensions = {
-    -- uberzug officially stops supporting
-    -- media_files = {
-    --     -- filetypes whitelist
-    --     -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-    --     filetypes = {"png", "webp", "jpg", "jpeg"},
-    --     find_cmd = "rg" -- find command (defaults to `fd`)
-    --   }
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
+    file_browser = {
+      theme = 'dropdown',
+      -- disable netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ['i'] = {
+          ['<C-w>'] = function() vim.cmd('normal vbd') end,
+        },
+        ['n'] = {
+          ['n'] = fb_actions.create,
+          ['H'] = fb_actions.goto_cwd,
+          ['h'] = fb_actions.goto_parent_dir,
+          ['l'] = fb_actions.change_cwd,
+          ['.'] = fb_actions.toggle_hidden,
+          ['/'] = function()
+            vim.cmd('startinsert')
+          end,
+        },
+      }
+    },
   },
 }
+
+telescope.load_extension('file_browser')
+
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set("n", ";f",
+  function()
+    require 'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))
+  end, opts)
+
+vim.keymap.set("n", ";b", function()
+  require 'telescope.builtin'.buffers()
+end, opts)
+
+vim.keymap.set("n", ";g", function()
+  require 'telescope.builtin'.live_grep()
+end, opts)
+
+vim.keymap.set("n", ";;", function()
+  require 'telescope.builtin'.resume()
+end, opts)
+
+vim.keymap.set("n", ";t", function()
+  require 'telescope.builtin'.help_tags()
+end, opts)
+
+vim.keymap.set("n", ";d", function()
+  require 'telescope.builtin'.diagnostics()
+end, opts)
+
+vim.keymap.set("n", ";e", function()
+  require('telescope').extensions.file_browser.file_browser({
+    path = '%:p:h',
+    cwd = telescope_buffer_dir(),
+    respect_git_ignore = false,
+    hidden = true,
+    grouped = true,
+    previewer = false,
+    initial_mode = 'normal',
+    layout_config = { height = 40 }
+  })
+end, opts)

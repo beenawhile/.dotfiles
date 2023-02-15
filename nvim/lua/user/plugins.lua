@@ -43,6 +43,7 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp
+  use "windwp/nvim-ts-autotag" -- Autotags for ts
   use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
   use "moll/vim-bbye"
   use "akinsho/toggleterm.nvim"
@@ -58,6 +59,10 @@ return packer.startup(function(use)
     requires = {
       { 'nvim-lua/plenary.nvim' },
     }
+  }
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
 
 
@@ -103,6 +108,7 @@ return packer.startup(function(use)
       }
     end
   }
+  use { 'norcalli/nvim-colorizer.lua' }
 
   -- surround(ex. ysiw{ )
   use {
@@ -152,7 +158,6 @@ return packer.startup(function(use)
   -- use { 'jose-elias-alvarez/null-ls.nvim' }
 
   -- Autocompletion
-  use { 'onsails/lspkind-nvim' } -- The completion plugin
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
   use { 'hrsh7th/cmp-buffer' } -- buffer completions
   use { 'hrsh7th/cmp-path' } -- path completions
@@ -191,11 +196,11 @@ return packer.startup(function(use)
   use { 'puremourning/vimspector' }
 
   -- leap
-  use { 'ggandor/leap.nvim' ,
+  use { 'ggandor/leap.nvim',
     config = function()
       require("leap").add_default_mappings()
     end
-}
+  }
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

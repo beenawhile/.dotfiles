@@ -4,6 +4,7 @@ local servers = {
   "yamlls",
   "tsserver",
   "html",
+  "bufls"
 }
 
 local settings = {

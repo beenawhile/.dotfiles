@@ -39,7 +39,6 @@ packer.init {
 }
 
 return packer.startup(function(use)
-
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp
@@ -74,7 +73,7 @@ return packer.startup(function(use)
   -- undo logs
   use { 'mbbill/undotree' }
 
-  -- git
+  -- git signs
   use 'lewis6991/gitsigns.nvim'
 
   -- icons
@@ -99,7 +98,7 @@ return packer.startup(function(use)
     } }
   }
 
-  -- bracket colorizer
+  -- indent blanckliner
   use { "lukas-reineke/indent-blankline.nvim",
     config = function()
       require("indent_blankline").setup {
@@ -130,18 +129,19 @@ return packer.startup(function(use)
     end
   }
 
+  -- commentary
   use "numToStr/Comment.nvim"
 
 
   -- jump to next symentic when tapping in insert mode
-  -- use {
-  --   'abecodes/tabout.nvim',
-  --   config = function()
-  --     require('tabout').setup {}
-  --   end,
-  --   wants = { 'nvim-treesitter' },
-  --   after = { 'nvim-cmp' },
-  -- }
+  use {
+    'abecodes/tabout.nvim',
+    config = function()
+      require('tabout').setup {}
+    end,
+    wants = { 'nvim-treesitter' },
+    after = { 'nvim-cmp' },
+  }
 
   use { "folke/zen-mode.nvim" }
   use { "github/copilot.vim" }
@@ -201,6 +201,11 @@ return packer.startup(function(use)
       require("leap").add_default_mappings()
     end
   }
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

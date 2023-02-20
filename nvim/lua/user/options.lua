@@ -1,3 +1,4 @@
+vim.g.transparent_enabled = true;
 -- :help options
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 2 -- more space in the neovim command line for displaying
@@ -17,10 +18,6 @@ vim.opt.autoindent = true
 vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 2 -- insert 2 spaces for a tab
-
--- undercurl
-vim.cmd([[let &t_Cs = "\e[4:3m]"]])
-vim.cmd([[let &t_Ce = "\e[4:0m]"]])
 
 -- backup
 vim.opt.backup = false
@@ -71,3 +68,7 @@ vim.opt.wildignore:append { '*/node_modules/*' }
 -- cmd: wrap vimscript in lua
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
+--
+-- undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m]"]])
+vim.cmd([[let &t_Ce = "\e[4:0m]"]])

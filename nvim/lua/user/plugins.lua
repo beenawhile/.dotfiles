@@ -172,9 +172,6 @@ return lazy.setup({
     end
   },
 
-  -- inspector
-  'puremourning/vimspector',
-
   -- leap
   { 'ggandor/leap.nvim',
     config = function()

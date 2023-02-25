@@ -14,12 +14,11 @@ read -r -s -p "[sudo] sudo password for $(whoami):" pass
 brew update && brew upgrade
 
 # install brew bundle apps
-brew bundle --file=./.Brewfile
+brew bundle --file=./Brewfile
 
 # give permission to cask apps
 # TODO: add specific apps
 echo "$pass" | sudo -S xattr -dr com.apple.quarantine /Applications/Alacritty.app
-echo "$pass" | sudo -S xattr -dr com.apple.quarantine /Applications/Amethyst.app
 echo "$pass" | sudo -S xattr -dr com.apple.quarantine /Applications/BetterDisplay.app
 echo "$pass" | sudo -S xattr -dr com.apple.quarantine /Applications/CheatSheet.app
 echo "$pass" | sudo -S xattr -dr com.apple.quarantine /Applications/DevToys.app

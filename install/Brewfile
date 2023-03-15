@@ -47,8 +47,6 @@ brew "ncdu"
 brew "neofetch"
 brew "neovim"
 brew "protobuf"
-brew "python@3.10"
-brew "python@3.9"
 brew "ripgrep"
 brew "rmlint"
 brew "shellcheck"
@@ -61,7 +59,6 @@ brew "tmux"
 brew "trash-cli"
 brew "universal-ctags"
 brew "unzip"
-brew "youtube-dl"
 brew "z"
 brew "zoxide"
 brew "zsh"
@@ -81,13 +78,10 @@ cask "firefox"
 cask "font-fira-code"
 cask "font-hack-nerd-font"
 cask "font-sf-mono-nerd-font"
-cask "google-chrome"
 cask "keka"
-cask "librewolf"
 cask "notion"
 cask "obsidian"
 cask "onyx"
-cask "racket"
 cask "raycast"
 cask "slack"
 cask "visual-studio-code"
@@ -96,10 +90,7 @@ mas "AdBlock Pro", id: 1018301773
 mas "Color Picker", id: 1545870783
 mas "Keynote", id: 409183694
 mas "Microsoft Remote Desktop", id: 1295203466
-mas "Neo Noir", id: 1592844577
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Parallels Desktop", id: 1085114709
-mas "PayPal Honey", id: 1472777122
 mas "Vimari", id: 1480933944
 mas "Xcode", id: 497799835

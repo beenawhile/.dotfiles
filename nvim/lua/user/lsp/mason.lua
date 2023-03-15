@@ -1,10 +1,6 @@
 local servers = {
   "lua_ls",
   "rust_analyzer",
-  "yamlls",
-  "tsserver",
-  "html",
-  "bufls"
 }
 
 local settings = {

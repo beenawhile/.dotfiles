@@ -751,6 +751,10 @@ key_bindings:
   - { key: K,        mods: Control|Shift,  command: { program: "/opt/homebrew/bin/tmux", args: ["resize-pane", "-U", "5"] } }
   - { key: L,        mods: Control|Shift,  command: { program: "/opt/homebrew/bin/tmux", args: ["resize-pane", "-R", "5"] } }
   - { key: M,        mods: Control|Shift,  command: { program: "/opt/homebrew/bin/tmux", args: ["resize-pane", "-Z"] } }
+  - { key: H,        mods: Control,  command: { program: "/opt/homebrew/bin/tmux", args: ["select-pane", "-L"] } }
+  - { key: J,        mods: Control,  command: { program: "/opt/homebrew/bin/tmux", args: ["select-pane", "-D"] } }
+  - { key: K,        mods: Control,  command: { program: "/opt/homebrew/bin/tmux", args: ["select-pane", "-U"] } }
+  - { key: L,        mods: Control,  command: { program: "/opt/homebrew/bin/tmux", args: ["select-pane", "-R"] } }
 
   #- { key: K,              mods: Command, mode: ~Vi|~Search, chars: "\x0c"                 }
   #- { key: K,              mods: Command, mode: ~Vi|~Search, action: ClearHistory          }

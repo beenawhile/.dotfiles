@@ -15,3 +15,7 @@ autoload -Uz _zinit
 # Install total of 22 plugins
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
+
+zinit ice blockf
+zinit light zsh-users/zsh-completions
+

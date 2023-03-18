@@ -1,0 +1,4 @@
+inherits = "base16_transparent"
+
+"comment" = { "fg" = "gray"}
+"ui.menu.selected" = { fg = "light-magenta" }

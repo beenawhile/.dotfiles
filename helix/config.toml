@@ -1,0 +1,95 @@
+theme = "base16"
+
+[editor]
+line-number = "relative"
+mouse = false
+bufferline = "multiple"
+
+[editor.statusline]
+left = ["mode", "spinner", "workspace-diagnostics"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+
+[editor.indent-guides]
+render = true
+character = "╎"
+
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+
+# Mac Alt-` (no way to capture this; Alt-` is the same as `)
+# "???" = "switch_to_uppercase"
+
+# Mac Alt-u / Alt-U (no way to capture this; Alt-u is the same as Alt-U)
+# "¨" = "earlier"
+# "¨" = "later"
+
+# Mac Alt-.
+"≥" = "repeat_last_motion"
+
+# Mac Alt-,
+"≤" = "remove_primary_selection"
+
+# Mac Alt-d
+"∂" = "delete_selection_noyank"
+
+# Mac Alt-s
+"ß" = "split_selection_on_newline"
+
+# Mac Alt-c
+"ç" = "change_selection_noyank"
+
+# Mac Alt-|
+"«" = "shell_pipe_to"
+
+# Mac Alt-!
+"⁄" = "shell_append_output"
+
+# Mac Alt-;
+"…" = "flip_selections"
+
+# Mac Alt-:
+"Ú" = "ensure_selections_forward"
+
+# Mac Alt-(
+"·" = "rotate_selection_contents_backward"
+
+# Mac Alt-)
+"‚" = "rotate_selection_contents_forward"
+
+# Mac Alt-x
+"≈" = "shrink_to_line_bounds"
+
+# Mac Alt-o
+"ø" = "expand_selection"
+
+# Mac Alt-i
+"ˆ" = "shrink_selection"
+
+# Mac Alt-p
+"π" = "select_prev_sibling"
+
+# Mac Alt-n
+"˜" = "select_next_sibling"
+
+[keys.insert]
+
+# Mac Alt-d
+"∂" = "delete_word_forward"
+
+# Mac Alt-b
+"∫" = "move_prev_word_end"
+
+# Mac Alt-f
+"ƒ" = "move_next_word_start"
+
+# Mac Alt->
+"˘" = "goto_file_end"
+
+# Mac Alt-<
+"¯" = "goto_file_start"
+
+[editor.cursor-shape]
+insert = "bar"

@@ -4,10 +4,6 @@ alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
-# focus between external displays (left and right)
-alt - s : yabai -m display --focus west
-alt - g : yabai -m display --focus east
-
 alt - y : yabai -m space --mirror y-axis
 alt - x : yabai -m space --mirror x-axis
 
@@ -23,26 +19,11 @@ ctrl + alt - j : yabai -m window --warp south
 ctrl + alt - k : yabai -m window --warp north
 ctrl + alt - l : yabai -m window --warp east
 
-# move window to display left and right
-shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
-shift + alt - g : yabai -m window --display east; yabai -m display --focus east;
-
-# move managed window
-shift + alt + ctrl - h : yabai -m window --warp west
-shift + alt + ctrl - j : yabai -m window --warp south
-shift + alt + ctrl - k : yabai -m window --warp north
-shift + alt + ctrl - l : yabai -m window --warp east
-
 # rotate tree
 alt - r : yabai -m space --rotate 90
 
 # toggle window fullscreen zoom
 alt - f : yabai -m window --toggle zoom-fullscreen
-
-# alt - s : yabai -m window --toggle 
-alt - s : yabai -m window --toggle sticky;\
-          yabai -m window --toggle topmost;\
-          yabai -m window --toggle pip
 
 # toggle padding and gap
 alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap

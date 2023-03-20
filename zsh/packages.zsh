@@ -18,4 +18,5 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 zinit ice blockf
 zinit light zsh-users/zsh-completions
+zinit load zdharma-continuum/history-search-multi-word
 

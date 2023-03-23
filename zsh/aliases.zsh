@@ -7,6 +7,7 @@ alias vi='nvim'
 alias cat='bat'
 alias trim="awk '{\$1=\$1;print}'"
 alias ta='tmux attach -t'
+alias grep='rg'
 
 alias wtr='curl wttr.in'
 

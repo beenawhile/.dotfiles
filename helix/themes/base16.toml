@@ -2,3 +2,6 @@ inherits = "base16_transparent"
 
 "comment" = { "fg" = "gray"}
 "ui.menu.selected" = { fg = "light-magenta" }
+"ui.bufferline.active" = { fg = "light-magenta", modifiers = ["bold"] }
+
+"markup.italic" = { fg = {}, modifiers = ["italic"] }

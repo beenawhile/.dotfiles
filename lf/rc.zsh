@@ -99,6 +99,7 @@ map n
 map "'"
 map '"'
 map d
+map G
 
 map au unarchive
 
@@ -124,6 +125,7 @@ map dr restore_trash
 map ee $$EDITOR "$f"
 
 # Movement
+map ge bottom
 map gd cd ~/documents
 map gD cd ~/downloads
 map gp cd ~/pictures

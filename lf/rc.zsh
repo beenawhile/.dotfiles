@@ -94,17 +94,17 @@ cmd open &{{
 # Bindings
 # Remove some defaults
 map m
-map o
+map o 
 map n
 map "'"
 map '"'
 map d
 
-map c $vscodium "$f"
-
 map au unarchive
 
 # Basic Functions
+map o &mimeopen $f
+map O &mimeopen --ask $f
 map . set hidden!
 map DD trash
 map p paste

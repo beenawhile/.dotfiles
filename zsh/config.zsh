@@ -181,4 +181,4 @@ ex=:\
 "
 export LC_ALL=en_US.UTF-8
 
-export DOCKER_DISPLAY=$(ifconfig en0 | grep inet\ | awk '{ print $2 }' | awk '{ print $1 ":0" }')
+export DOCKER_DISPLAY=$(ifconfig en0 | grep inet\ | awk '{ print $2 ":0" }')

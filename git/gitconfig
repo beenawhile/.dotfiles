@@ -3,7 +3,7 @@
 	email = youngmin-gwon@users.noreply.github.com
 [core]
 	excludesfile = ~/.gitignore
-    	editor = nvim
+	editor = hx
 [pull]
 	ff = only
 [init]

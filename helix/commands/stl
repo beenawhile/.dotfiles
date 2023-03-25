@@ -1,0 +1,10 @@
+NAME=$1
+NAME="${NAME:=MyStatelessWidget}"
+echo "class ${NAME} extends StatelessWidget {"
+echo "  const ${NAME}({super.key});"
+echo ""
+echo "  @override"
+echo "  Widget build(BuildContext context) {"
+echo "    return Container();"
+echo "  }"
+echo "}"

@@ -1,1 +1,4 @@
 $DOTFILES/helix=$HOME/.config/helix
+$DOTFILES/helix/commands/stl=$HOME/.local/bin/stl
+$DOTFILES/helix/commands/stf=$HOME/.local/bin/stf
+$DOTFILES/helix/commands/lf-pick=$HOME/.local/bin/lf-pick

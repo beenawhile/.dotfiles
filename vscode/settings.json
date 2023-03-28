@@ -2,7 +2,9 @@
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "editor.rulers": [80],
+    "editor.rulers": [
+      80
+    ],
     // settings for const
     "editor.codeActionsOnSave": {},
     "editor.selectionHighlight": false,
@@ -15,9 +17,9 @@
     "editor.defaultFormatter": "matklad.rust-analyzer",
     "editor.formatOnSave": true
   },
-  "editor.fontFamily": "MesloLGS NF, 'Courier New', monospace",
-  "editor.inlayHints.fontFamily": "MesloLGS NF",
-  "debug.console.fontFamily": "MesloLGS NF",
+  "editor.fontFamily": "Hack Nerd Font, 'Courier New', monospace",
+  "editor.inlayHints.fontFamily": "Hack Nerd Font",
+  "debug.console.fontFamily": "Hack Nerd Font",
   "workbench.iconTheme": "vscode-icons",
   "vscode-edge-devtools.mirrorEdits": true,
   "vscode-edge-devtools.webhint": false,
@@ -38,7 +40,6 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "terminal.external.osxExec": "Alacritty.app",
   "editor.lineNumbers": "relative",
-  "workbench.colorTheme": "Tokyo Night Storm",
   "workbench.productIconTheme": "fluent-icons",
   "dart.showInspectorNotificationsForWidgetErrors": false,
   "redhat.telemetry.enabled": false,
@@ -703,5 +704,7 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.colorTheme": "One Dark Theme"
 }

@@ -1,3 +1,7 @@
+if vim.g.vscode then
+  return
+end
+
 require("lf").setup({
   winblend = 0,
   highlights = { NormalFloat = { guibg = "NONE" } },

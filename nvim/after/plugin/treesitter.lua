@@ -1,3 +1,7 @@
+if vim.g.vscode then
+  return
+end
+
 -- Treesitter Plugin Setup
 local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then

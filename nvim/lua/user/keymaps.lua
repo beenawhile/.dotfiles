@@ -70,7 +70,7 @@ keymap("v", "p", '"_dP', opts)
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+-- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
@@ -81,7 +81,7 @@ keymap("n", "<leader>pb", "<cmd>lua require'telescope.builtin'.buffers()<cr>", o
 keymap("n", "<leader>ps", "<cmd>Telescope live_grep<cr>", opts)
 
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+-- keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 keymap("n", "J", "mzJ`z", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)

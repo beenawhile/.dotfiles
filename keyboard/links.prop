@@ -1,3 +1,3 @@
-$DOTFILES/keyboard/air40.h=$HOME/qmk_firmware/keyboards/ymdk/ymd40/air40/config.h
-$DOTFILES/keyboard/air40.mk=$HOME/qmk_firmware/keyboards/ymdk/ymd40/air40/rules.mk
-$DOTFILES/keyboard/air40.c=$HOME/qmk_firmware/keyboards/ymdk/ymd40/air40/keymaps/youngmin-gwon/keymap.c
+$DOTFILES/keyboard=$HOME/qmk_firmware/keyboards
+
+

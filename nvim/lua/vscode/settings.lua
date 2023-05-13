@@ -12,3 +12,6 @@ keymap("n", "<S-Tab>", ":Tabprev<CR>", opts)
 
 keymap("n", "<C-w>_", ":call VSCodeNotify('workbench.action.toggleEditorWidths')<CR>", opts)
 keymap("n", "<C-w>=", ":call VSCodeNotify('workbench.action.evenEditorWidths')<CR>", opts)
+
+keymap("v", ">", ">gv", opts)
+keymap("v", "<", "<gv", opts)

@@ -23,7 +23,7 @@ require("mason-lspconfig").setup({
 })
 
 -- add dart language server seperately since it is not in mason list
-table.insert(servers, "dartls")
+-- table.insert(servers, "dartls")
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then

@@ -26,8 +26,8 @@ if not status_ok then
 end
 
 return lazy.setup({
-  'nvim-lua/plenary.nvim', -- Useful lua functions used ny lots of plugins
-  'windwp/nvim-autopairs', -- Autopairs, integrates with both cmp
+  'nvim-lua/plenary.nvim',  -- Useful lua functions used ny lots of plugins
+  'windwp/nvim-autopairs',  -- Autopairs, integrates with both cmp
   'windwp/nvim-ts-autotag', -- Autotags for ts
   { 'akinsho/bufferline.nvim', version = "v3.*", dependencies = 'nvim-tree/nvim-web-devicons' },
   'moll/vim-bbye',
@@ -39,7 +39,8 @@ return lazy.setup({
     dependencies = { "nvim-lua/plenary.nvim", "akinsho/toggleterm.nvim" },
   },
   {
-    'nvim-telescope/telescope.nvim', version = '0.1.0',
+    'nvim-telescope/telescope.nvim',
+    version = '0.1.0',
     -- or                            , branch = '0.1.x',
     dependencies = {
       { 'nvim-lua/plenary.nvim' },
@@ -108,7 +109,8 @@ return lazy.setup({
   },
 
   -- commentary
-  { 'numToStr/Comment.nvim',
+  {
+    'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
     end
@@ -119,7 +121,9 @@ return lazy.setup({
 
   'christoomey/vim-tmux-navigator',
 
-  { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate",
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ":TSUpdate",
     dependencies = {
       'hrsh7th/nvim-cmp',
       dependencies = {
@@ -139,20 +143,22 @@ return lazy.setup({
   -- 'jose-elias-alvarez/null-ls.nvim',
 
   -- Autocompletion
-  'hrsh7th/cmp-buffer', -- buffer completions
-  'hrsh7th/cmp-path', -- path completions
-  'hrsh7th/cmp-cmdline', -- cmdline completions
+  'hrsh7th/cmp-buffer',       -- buffer completions
+  'hrsh7th/cmp-path',         -- path completions
+  'hrsh7th/cmp-cmdline',      -- cmdline completions
   'saadparwaiz1/cmp_luasnip', -- snippet completions
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lua',
 
   -- Snippets
-  'L3MON4D3/LuaSnip', -- snippet engine
+  'L3MON4D3/LuaSnip',             -- snippet engine
   'rafamadriz/friendly-snippets', -- a bunch of snippets to use
 
   -- flutter only
   -- use { 'thosakwe/vim-flutter' }
-  { 'akinsho/flutter-tools.nvim', dependencies = 'nvim-lua/plenary.nvim',
+  {
+    'akinsho/flutter-tools.nvim',
+    dependencies = 'nvim-lua/plenary.nvim',
     config = function()
       require("flutter-tools").setup({
         enable = true,
@@ -173,7 +179,8 @@ return lazy.setup({
   },
 
   -- leap
-  { 'ggandor/leap.nvim',
+  {
+    'ggandor/leap.nvim',
     config = function()
       require("leap").add_default_mappings()
     end
@@ -184,5 +191,17 @@ return lazy.setup({
     "iamcco/markdown-preview.nvim",
     build = function() vim.fn["mkdp#util#install"]() end,
   },
+
+  -- browser extension
+  {
+    'glacambre/firenvim',
+    -- Lazy load firenvim
+    -- Explanation: https://github.com/folke/lazy.nvim/discussions/463#discussioncomment-4819297
+    cond = not not vim.g.started_by_firenvim,
+    build = function()
+      require("lazy").load({ plugins = "firenvim", wait = true })
+      vim.fn["firenvim#install"](0)
+    end
+  }
 
 })

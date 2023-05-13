@@ -13,14 +13,12 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-  "[rust]": {
-    "editor.defaultFormatter": "matklad.rust-analyzer",
-    "editor.formatOnSave": true
-  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.stickyScroll.enabled": true,
   "editor.fontFamily": "Hack Nerd Font, 'Courier New', monospace",
   "editor.inlayHints.fontFamily": "Hack Nerd Font",
   "debug.console.fontFamily": "Hack Nerd Font",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "ayu",
   "vscode-edge-devtools.mirrorEdits": true,
   "vscode-edge-devtools.webhint": false,
   "files.associations": {
@@ -36,18 +34,21 @@
   },
   "dart.previewFlutterUiGuides": true,
   "dart.previewFlutterUiGuidesCustomTracking": true,
+  "dart.testInvocationMode": "name",
+  "dart.showInspectorNotificationsForWidgetErrors": false,
+  "dart.debugExternalPackageLibraries": true,
+  "dart.debugSdkLibraries": true,
+  "dart.checkForSdkUpdates": false,
+  "dart.renameFilesWithClasses": "always",
+  "dart.experimentalRefactors": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "terminal.external.osxExec": "Alacritty.app",
   "editor.lineNumbers": "relative",
   "workbench.productIconTheme": "fluent-icons",
-  "dart.showInspectorNotificationsForWidgetErrors": false,
   "redhat.telemetry.enabled": false,
-  "dart.debugExternalPackageLibraries": false,
-  "dart.debugSdkLibraries": false,
   "vsicons.dontShowNewVersionMessage": true,
   "liveshare.audio.startCallOnShare": true,
-  "dart.checkForSdkUpdates": false,
   "notebook.lineNumbers": "on",
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.lua",
@@ -65,6 +66,20 @@
       "type": "command",
       "command": "vscode-neovim.send",
       "args": "<C-/>"
+    },
+    {
+      "key": "]",
+      "name": "show next error in file",
+      "type": "command",
+      "command": "editor.action.marker.nextInFiles",
+      "when": "editorFocus"
+    },
+    {
+      "key": "[",
+      "name": "show previous error in file",
+      "type": "command",
+      "command": "editor.action.marker.prevInFiles",
+      "when": "editorFocus"
     },
     {
       "key": "c",
@@ -130,6 +145,12 @@
       "name": "Save File",
       "type": "command",
       "command": "workbench.action.files.save"
+    },
+    {
+      "key": "y",
+      "name": "Copy to clipboard",
+      "type": "command",
+      "command": "editor.action.clipboardCopyAction"
     },
     {
       "key": "b",
@@ -315,7 +336,9 @@
       "key": "e",
       "name": "Toggle Explorer",
       "type": "command",
-      "command": "workbench.action.toggleSidebarVisibility"
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ]
     },
     {
       "key": "f",
@@ -694,17 +717,464 @@
       "command": "workbench.action.toggleZenMode"
     }
   ],
-  "editor.minimap.enabled": false,
   "editor.accessibilitySupport": "off",
   "prettier.singleQuote": true,
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.CustomBrowser": "firefox",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "editor.formatOnSave": true,
   "git.openRepositoryInParentFolders": "never",
-  "workbench.colorTheme": "One Dark Theme"
+  "workbench.colorTheme": "Mayukai Reversal",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "dance.menus": {
+    "object": {
+      "title": "Select object...",
+      "items": {
+        "w": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "[\\p{L}_\\d]+(?<after>[^\\S\\n]+)"
+            }
+          ],
+          "text": "word"
+        },
+        "W": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "[\\S]+(?<after>[^\\S\\n]+)"
+            }
+          ],
+          "text": "WORD"
+        },
+        "s": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#predefined=sentence)"
+            }
+          ],
+          "text": "sentence"
+        },
+        "p": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#predefined=paragraph)"
+            }
+          ],
+          "text": "paragraph"
+        },
+        " ": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?<before>[\\s]+)[^\\S\\n]+(?<after>[\\s]+)"
+            }
+          ],
+          "text": "whitespaces"
+        },
+        "i": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#predefined=indent)"
+            }
+          ],
+          "text": "indent"
+        },
+        "()": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\((?#inner)\\)"
+            }
+          ],
+          "text": "parenthesis block"
+        },
+        "{}": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\{(?#inner)\\}"
+            }
+          ],
+          "text": "braces block"
+        },
+        "[]": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\[(?#inner)\\]"
+            }
+          ],
+          "text": "brackets block"
+        },
+        "<>": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "<(?#inner)>"
+            }
+          ],
+          "text": "angle block"
+        },
+        "\"": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)\"(?#inner)(?#noescape)\""
+            }
+          ],
+          "text": "double quote string"
+        },
+        "'": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)'(?#inner)(?#noescape)'"
+            }
+          ],
+          "text": "single quote string"
+        },
+        "`": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)`(?#inner)(?#noescape)`"
+            }
+          ],
+          "text": "grave quote string"
+        },
+        "c": {
+          "command": "dance.seek.object",
+          "text": "custom object desc"
+        }
+      }
+    },
+    "match": {
+      "title": "Match...",
+      "items": {
+        "m": {
+          "text": "Goto matching bracket",
+          "command": "dance.seek.enclosing"
+        },
+        "s": {
+          "text": "Surround add",
+          "command": "dance.match.surround"
+        },
+        "r": {
+          "text": "Surround replace",
+          "command": "dance.match.surroundreplace"
+        },
+        "d": {
+          "text": "Surround delete",
+          "command": "dance.match.surrounddelete"
+        },
+        "a": {
+          "text": "Select around object",
+          "command": "dance.seek.askObject"
+        },
+        "i": {
+          "text": "Select inside object",
+          "command": "dance.seek.askObject.inner"
+        }
+      }
+    },
+    "space": {
+      "title": "Space",
+      "items": {
+        "e": {
+          "text": "Toggle explorer",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
+        "t": {
+          "text": "Toggle terminal",
+          "command": "workbench.action.togglePanel"
+        },
+        "f": {
+          "text": "Open file picker",
+          "command": "workbench.action.quickOpen"
+        },
+        "b": {
+          "text": "Open buffer picker",
+          "command": "workbench.action.showAllEditors"
+        },
+        "s": {
+          "text": "Open symbol picker",
+          "command": "workbench.action.gotoSymbol"
+        },
+        "a": {
+          "text": "Perform code action",
+          "command": "editor.action.quickFix"
+        },
+        "d": {
+          "text": "Start debug",
+          "command": "workbench.action.debug.start"
+        },
+        "w": {
+          "text": "Window",
+          "command": "dance.window.windowMenu"
+        },
+        "y": {
+          "text": "Join and yank selections to clipboard",
+          "command": "dance.selections.saveText",
+          "args": [
+            {
+              "register": ""
+            }
+          ]
+        },
+        "p": {
+          "text": "Paste clipboard after selections",
+          "command": "dance.edit.insert",
+          "args": [
+            {
+              "handleNewLine": true,
+              "where": "end"
+            }
+          ]
+        },
+        "P​": {
+          "text": "Paste clipboard before selections",
+          "command": "dance.edit.insert",
+          "args": [
+            {
+              "handleNewLine": true,
+              "where": "start"
+            }
+          ]
+        },
+        "/": {
+          "text": "Global Search in workspace folder",
+          "command": "workbench.action.findInFiles"
+        },
+        "k": {
+          "text": "Show docs for item under cursor (hover)",
+          "command": "editor.action.showHover"
+        },
+        "r": {
+          "text": "Rename symbol",
+          "command": "editor.action.rename"
+        },
+        "?": {
+          "text": "Open command palette",
+          "command": "workbench.action.showCommands"
+        }
+      }
+    },
+    "goto": {
+      "title": "Go...",
+      "items": {
+        "g": {
+          "text": "to first line",
+          "command": "dance.select.lineStart",
+          "args": [
+            {
+              "count": 1
+            }
+          ]
+        },
+        "e": {
+          "text": "to last char of last line",
+          "command": "dance.select.lineEnd",
+          "args": [
+            {
+              "count": 2147483647
+            }
+          ]
+        },
+        "f": {
+          "text": "to file whose name is selected",
+          "command": "dance.selections.open"
+        },
+        "h": {
+          "text": "to line start",
+          "command": "dance.select.lineStart"
+        },
+        "l": {
+          "text": "to line end",
+          "command": "dance.select.lineEnd"
+        },
+        "s": {
+          "text": "to non-blank line start",
+          "command": "dance.select.lineStart",
+          "args": [
+            {
+              "skipBlank": true
+            }
+          ]
+        },
+        "t": {
+          "text": "to first displayed line",
+          "command": "dance.select.firstVisibleLine"
+        },
+        "c": {
+          "text": "to middle displayed line",
+          "command": "dance.select.middleVisibleLine"
+        },
+        "b": {
+          "text": "to last displayed line",
+          "command": "dance.select.lastVisibleLine"
+        },
+        "d": {
+          "text": "to definition",
+          "command": "editor.action.revealDefinition"
+        },
+        "y": {
+          "text": "to type definition",
+          "command": "editor.action.goToTypeDefinition"
+        },
+        "r": {
+          "text": "to references",
+          "command": "editor.action.goToReferences"
+        },
+        "i": {
+          "text": "to implementation",
+          "command": "editor.action.goToImplementation"
+        },
+        "a": {
+          "text": "to last accessed buffer",
+          "command": "workbench.action.openPreviousRecentlyUsedEditorInGroup"
+        },
+        "n": {
+          "text": "to next buffer",
+          "command": "workbench.action.nextEditor"
+        },
+        "p": {
+          "text": "to previous buffer",
+          "command": "workbench.action.previousEditor"
+        },
+        ".": {
+          "text": "to last buffer modification position",
+          "command": "dance.selections.restore",
+          "args": [
+            {
+              "register": " insert"
+            }
+          ]
+        }
+      }
+    },
+    "window": {
+      "title": "Window",
+      "items": {
+        "w": {
+          "text": "Goto next window",
+          "command": "workbench.action.nextEditor"
+        },
+        "s": {
+          "text": "Horizontal bottom split",
+          "command": "workbench.action.splitEditorDown"
+        },
+        "v": {
+          "text": "Vertical right split",
+          "command": "workbench.action.splitEditor"
+        },
+        "t": {
+          "text": "Transpose splits",
+          "command": "workbench.action.toggleEditorGroupLayout"
+        },
+        "q": {
+          "text": "Close window",
+          "command": "workbench.action.closeActiveEditor"
+        },
+        "o": {
+          "text": "Close all other windows (Current window only)",
+          "command": "workbench.action.closeOtherEditors"
+        },
+        "h": {
+          "text": "Jump to the split on the left",
+          "command": "workbench.action.focusLeftGroup"
+        },
+        "j": {
+          "text": "Jump to the split below",
+          "command": "workbench.action.focusBelowGroup"
+        },
+        "k": {
+          "text": "Jump to the split above",
+          "command": "workbench.action.focusAboveGroup"
+        },
+        "l": {
+          "text": "Jump to the split to the right",
+          "command": "workbench.action.focusRightGroup"
+        },
+        "H": {
+          "text": "Swap with the split to the left",
+          "command": "workbench.action.moveActiveEditorGroupLeft"
+        },
+        "J": {
+          "text": "Swap with the split below",
+          "command": "workbench.action.moveActiveEditorGroupDown"
+        },
+        "K": {
+          "text": "Swap with the split above",
+          "command": "workbench.action.moveActiveEditorGroupUp"
+        },
+        "L": {
+          "text": "Swap with the split to the right",
+          "command": "workbench.action.moveActiveEditorGroupRight"
+        }
+      }
+    },
+    "view": {
+      "title": "View",
+      "items": {
+        "zc": {
+          "text": "center cursor vertically",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "center"
+            }
+          ]
+        },
+        "t": {
+          "text": "cursor on top",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "top"
+            }
+          ]
+        },
+        "b": {
+          "text": "cursor on bottom",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "bottom"
+            }
+          ]
+        },
+        "j": {
+          "text": "scroll down",
+          "command": "editorScroll",
+          "args": [
+            {
+              "to": "down",
+              "by": "line",
+              "revealCursor": true
+            }
+          ]
+        },
+        "k": {
+          "text": "scroll up",
+          "command": "editorScroll",
+          "args": [
+            {
+              "to": "up",
+              "by": "line",
+              "revealCursor": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "markdown.preview.scrollPreviewWithEditor": false
 }

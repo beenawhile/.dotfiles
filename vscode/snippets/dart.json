@@ -78,7 +78,7 @@
 		"prefix": "aaaTest",
 		"body": [
 			"test(",
-			"  \"$1\",",
+			"  '$1',",
 			"  () async {",
 			"    $2",
 			"  },",
@@ -90,7 +90,7 @@
 		"prefix": "wTest",
 		"body": [
 			"testWidgets(",
-			"  \"$1\",",
+			"  '$1',",
 			"  (WidgetTester tester) async {$2},",
 			");"
 		],

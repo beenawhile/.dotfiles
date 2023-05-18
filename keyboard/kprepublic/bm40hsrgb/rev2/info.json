@@ -13,7 +13,8 @@
         "command": false,
         "nkro": false,
         "backlight": false,
-        "audio": false
+        "audio": false,
+        "combo": true
     },
     "usb": {
         "vid": "0x4B50",

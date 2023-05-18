@@ -23,24 +23,40 @@ enum layers {
   _NUMPAD
 };
 
+enum combos {
+    QW_ESC,
+    DOTCOMMA_SCLN,
+    JK_TAB
+};
+
+const uint16_t PROGMEM qw_combo[] = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM comm_dot_combo[] = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
+
+combo_t key_combos[] = {
+    [QW_ESC] = COMBO(qw_combo, KC_ESC),
+    [DOTCOMMA_SCLN] = COMBO(comm_dot_combo, KC_SCLN),
+    [JK_TAB] = COMBO(jk_combo, KC_TAB)
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
  * ,-----------------------------------------------------------------------------------.
- * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
+ * | Esc  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Esc  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  "   |
+ * | Tab  |   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |Enter |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Enter |
+ * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | BLTog| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * | C+SPC| Ctrl | Alt  | GUI  |Lower | Space/Shift |Raise | RCtrl| RAlt |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_ortho_4x12_1x2uC(
-    KC_ESC,       KC_Q,             KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,        KC_P,    KC_BSPC,
-    KC_TAB,       KC_A,             KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,        KC_SCLN, KC_ENT,
-    KC_LSFT,      KC_Z,             KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,      KC_SLSH, KC_LSFT,
-    LCTL(KC_SPC), LCTL_T(KC_MPLY),  KC_LALT, KC_LGUI, MO(1),   KC_SPC,  MO(2),   KC_LCTL, TG(_NUMPAD), _______, QK_LOCK
+    KC_ESC,       KC_Q,             KC_W,    KC_E,    KC_R,    KC_T,   KC_Y,   KC_U,    KC_I,    KC_O,    KC_P,        KC_BSPC,
+    KC_TAB,       KC_A,             KC_S,    KC_D,    KC_F,    KC_G,   KC_H,   KC_J,    KC_K,    KC_L,    KC_SCLN,     KC_ENT,
+    KC_LSFT,      KC_Z,             KC_X,    KC_C,    KC_V,    KC_B,   KC_N,   KC_M,    KC_COMM, KC_DOT,  KC_SLSH,     KC_LSFT,
+    LCTL(KC_SPC), LCTL_T(KC_MPLY),  KC_LALT, KC_LGUI, TL_LOWR, KC_SPC,         TL_UPPR, KC_LCTL, KC_RALT, TG(_NUMPAD), QK_LOCK
 ),
 
 /* Lower
@@ -55,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_ortho_4x12_1x2uC(
-    KC_GRV, KC_1,     KC_2,      KC_3,     KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+    KC_GRV,  KC_1,     KC_2,      KC_3,     KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
     _______, KC_COLN,  KC_MINS,   KC_EQL,   KC_DQUO, KC_QUOT, KC_GRV,  KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, KC_BSLS,
     _______, KC_SCLN,  KC_UNDS,   KC_PLUS,  KC_PIPE, KC_QUES, KC_PERC, KC_LBRC, KC_RBRC, KC_LT,   KC_GT,   _______,
     _______, _______,  _______,   _______,  _______, _______, _______, _______, KC_VOLD, KC_VOLU, KC_SLEP

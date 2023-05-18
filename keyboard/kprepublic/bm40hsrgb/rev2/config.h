@@ -35,4 +35,10 @@
 #    define RGB_MATRIX_LED_COUNT (DRIVER_LED_TOTAL)
 
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
+
+
+// combo length
+#   define COMBO_COUNT 4
+#   define COMBO_KEY_BUFFER_LENGTH 8
+#   define COMBO_BUFFER_LENGTH 4
 #endif

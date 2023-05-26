@@ -1176,5 +1176,6 @@
       }
     }
   },
-  "markdown.preview.scrollPreviewWithEditor": false
+  "markdown.preview.scrollPreviewWithEditor": false,
+  "workbench.sideBar.location": "right"
 }

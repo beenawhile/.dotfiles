@@ -1,9 +1,3 @@
-# MCU name
-MCU = atmega32u4
-
-# Bootloader selection
-BOOTLOADER = atmel-dfu
-
 # Build Options
 #   change yes to no to disable
 #
@@ -20,9 +14,7 @@ RGB_MATRIX_ENABLE = yes
 RGB_MATRIX_DRIVER = WS2812
 AUDIO_ENABLE = no           # Audio output
 AUDIO_SUPPORTED = no
-KEY_LOCK_ENABLE = yes
+KEY_LOCK_ENABLE = no
+CAPS_WORD_ENABLE = yes      # Activate CapsLock until finishing word
 
-LAYOUTS = planck_mit
-LAYOUTS_HAS_RGB = yes
-# UNICODE_ENABLE = yes
-UNICODEMAP_ENABLE = yes
+LAYOUTS = ortho_4x12

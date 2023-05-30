@@ -16,23 +16,6 @@
 
 #pragma once
 
-
-/*
- * Keyboard Matrix Assignments
- *
- * Change this to how you wired your keyboard
- * COLS: AVR pins used for columns, left to right
- * ROWS: AVR pins used for rows, top to bottom
- * DIODE_DIRECTION: COL2ROW = COL = Anode (+), ROW = Cathode (-, marked on diode)
- *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
- *
- */
-#define MATRIX_ROW_PINS { D0, B3, B2, B1 }
-#define MATRIX_COL_PINS { F1, F0, B0, C7, F4, F5, F6, F7, D4, D6, B4, D7 }
-
-#define DIODE_DIRECTION COL2ROW
-
-#define RGB_DI_PIN E2
 #define RGB_MATRIX_LED_COUNT 51
 #ifdef RGB_MATRIX_ENABLE
 #    define RGB_MATRIX_KEYPRESSES // reacts to keypresses
@@ -86,12 +69,16 @@
 #    define ENABLE_RGB_MATRIX_MULTISPLASH
 #    define ENABLE_RGB_MATRIX_SOLID_SPLASH
 #    define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
-#endif
 
 /// -- Home Row --
 // Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 140
-// Prevent normal rollover on alphas from accidentally triggering mods.
-#define IGNORE_MOD_TAP_INTERRUPT
+#    define TAPPING_TERM 200
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define QUICK_TAP_TERM 0
+#    define QUICK_TAP_TERM 0
+
+/// -- Combo --
+// Configure combo
+#    define COMBO_COUNT 4
+#    define COMBO_KEY_BUFFER_LENGTH 8
+#    define COMBO_BUFFER_LENGTH 4
+#endif

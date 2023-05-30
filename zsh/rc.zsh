@@ -32,3 +32,8 @@ eval "$(starship init zsh)"
 [[ -f /Users/admin/.dart-cli-completion/zsh-config.zsh ]] && . /Users/admin/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+export PATH="$PATH":"$(asdf where flutter)/bin/cache/dart-sdk"
+
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+

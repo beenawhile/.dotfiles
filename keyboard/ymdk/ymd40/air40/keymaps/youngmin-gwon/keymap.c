@@ -27,29 +27,12 @@ enum layer_names {
   _MOUSE,
 };
 
-enum combos {
-    DOTCOMMA_SCLN,
-    MCOMM_ESC,
-    JK_TAB
-};
-
-const uint16_t PROGMEM comm_dot_combo[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM m_comm_combo[] = {KC_M, KC_COMM, COMBO_END};
-const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
-
-combo_t key_combos[] = {
-    [DOTCOMMA_SCLN] = COMBO(comm_dot_combo, KC_SCLN),
-    [MCOMM_ESC] = COMBO(m_comm_combo, KC_ESC),
-    [JK_TAB] = COMBO(jk_combo, KC_TAB)
-};
-
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT_ortho_4x12(
-        _______, KC_Q,         KC_W,    KC_E,    KC_R,        KC_T,        KC_Y,           KC_U,        KC_I,    KC_O,    KC_P,    _______,
-        _______, KC_A,         KC_S,    SFT_T(KC_D),    KC_F, CTL_T(KC_G), CTL_T(KC_H),    KC_J, KC_K,    KC_L,    KC_BSPC, KC_ENT,
-        _______, KC_Z,         KC_X,    KC_C,    KC_V,        KC_B,        KC_N,           KC_M,        KC_COMM, KC_DOT,  KC_SLSH, _______,
-        _______, LCTL(KC_SPC), KC_LALT, KC_LGUI, MO(_LOWER),  KC_SPC,      LSFT_T(KC_ENT), MO(_NAV),    KC_RCTL, KC_RALT, _______, _______ 
+        _______, KC_Q,         KC_W,         KC_E,              KC_R,              KC_T,               KC_Y,          KC_U,             KC_I,             KC_O,           KC_P,    _______,
+        _______, KC_A,         ALT_T(KC_S),  GUI_T(KC_D),       SFT_T(KC_F),       CTL_T(KC_G),        CTL_T(KC_H),   SFT_T(KC_J),      GUI_T(KC_K),      ALT_T(KC_L),    KC_SCLN, KC_ENT,
+        _______, KC_Z,         ALGR_T(KC_X), KC_C,              KC_V,              KC_B,               KC_N,          KC_M,             KC_COMM,          ALGR_T(KC_DOT), KC_SLSH, _______,
+        _______, LCTL(KC_SPC), _______,      LT(_MEDIA,KC_TAB), LT(_LOWER,KC_ESC), LT(_MOUSE,KC_SPC),  SFT_T(KC_ENT), LT(_NAV,KC_BSPC), LT(_FUNC,KC_DEL), _______,        _______, _______
     ),
     [_LOWER] = LAYOUT_ortho_4x12(
         _______, KC_1,     KC_2,      KC_3,     KC_4,    KC_5,    KC_6,    KC_7,               KC_8,    KC_9,    KC_0,     _______,
@@ -95,3 +78,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(_LOWER,KC_ESC):
+            return TAPPING_TERM - 75;
+        case LT(_MEDIA,KC_TAB):
+            return TAPPING_TERM - 75;
+        case SFT_T(KC_ENT):
+            return TAPPING_TERM - 50;
+        case SFT_T(KC_F):
+            return TAPPING_TERM - 75;
+        case SFT_T(KC_J):
+            return TAPPING_TERM - 75;
+        default:
+            return TAPPING_TERM;
+    }
+}

@@ -15,6 +15,6 @@ AUDIO_ENABLE = no           # Audio output
 AUDIO_SUPPORTED = no
 KEY_LOCK_ENABLE = no
 CAPS_WORD_ENABLE = yes      # Activate CapsLock until finishing word
-COMBO_ENABLE =yes           # Activate Combo
+DYNAMIC_TAPPING_TERM_ENABLE = yes
 
 LAYOUTS = ortho_4x12

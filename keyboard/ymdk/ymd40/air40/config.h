@@ -78,7 +78,10 @@
 
 /// -- Combo --
 // Configure combo
-#    define COMBO_COUNT 4
-#    define COMBO_KEY_BUFFER_LENGTH 8
-#    define COMBO_BUFFER_LENGTH 4
+// #    define COMBO_COUNT 4
+// #    define COMBO_KEY_BUFFER_LENGTH 8
+// #    define COMBO_BUFFER_LENGTH 4
+
+/// -- Combo --
+#define TAPPING_TERM_PER_KEY
 #endif

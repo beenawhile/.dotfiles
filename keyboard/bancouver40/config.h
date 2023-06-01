@@ -17,7 +17,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#include "config_common.h"
+#ifndef __ASSEMBLER__
+#    include "pin_defs.h"
+#endif
+
+/* diode directions */
+#define COL2ROW 0
+#define ROW2COL 1
 
 /* key matrix size */
 #define MATRIX_ROWS 4
@@ -33,16 +39,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define DYNAMIC_KEYMAP_LAYER_COUNT 10
 
-/// -- Combo --
-// combo length
-#define COMBO_COUNT 4
-#define COMBO_KEY_BUFFER_LENGTH 8
-#define COMBO_BUFFER_LENGTH 4
-
 /// -- Home Row --
 // Configure the global tapping term (default: 200ms)
 #define TAPPING_TERM 200
-// Prevent normal rollover on alphas from accidentally triggering mods.
-#define IGNORE_MOD_TAP_INTERRUPT
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
+// -- Enable different tapping term per key
+#define TAPPING_TERM_PER_KEY

@@ -23,31 +23,15 @@ enum layers {
   _NUMPAD,
   _FUNC,
   _MEDIA,
-  _MOUSE,
-};
-
-enum combos {
-    QW_ESC,
-    DOTCOMMA_SCLN,
-    JK_TAB
-};
-
-const uint16_t PROGMEM qw_combo[] = {KC_Q, KC_W, COMBO_END};
-const uint16_t PROGMEM comm_dot_combo[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM jk_combo[] = {KC_J, KC_K, COMBO_END};
-
-combo_t key_combos[] = {
-    [QW_ESC] = COMBO(qw_combo, KC_ESC),
-    [DOTCOMMA_SCLN] = COMBO(comm_dot_combo, KC_SCLN),
-    [JK_TAB] = COMBO(jk_combo, KC_TAB)
+  _MOUSE
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT_ortho_4x12_1x2uC(
-        _______, KC_Q,         KC_W,         KC_E,              KC_R,              KC_T,               KC_Y,        KC_U,             KC_I,             KC_O,           KC_P,    _______,
-        _______, KC_A,         ALT_T(KC_S),  GUI_T(KC_D),       SFT_T(KC_F),       CTL_T(KC_G),        CTL_T(KC_H), SFT_T(KC_J),      GUI_T(KC_K),      ALT_T(KC_L),    KC_SCLN, KC_ENT,
-        _______, KC_Z,         ALGR_T(KC_X), KC_C,              KC_V,              KC_B,               KC_N,        KC_M,             KC_COMM,          ALGR_T(KC_DOT), KC_SLSH, _______,
-        _______, LCTL(KC_SPC), _______,      LT(_MEDIA,KC_ESC), LT(_LOWER,KC_TAB), LT(_MOUSE,KC_SPC),               LT(_NAV,KC_BSPC), LT(_FUNC,KC_DEL), _______,        _______, _______ 
+        _______, KC_Q,         KC_W,         KC_E,              KC_R,              KC_T,               KC_Y,          KC_U,             KC_I,             KC_O,           KC_P,    _______,
+        _______, KC_A,         ALT_T(KC_S),  GUI_T(KC_D),       SFT_T(KC_F),       CTL_T(KC_G),        CTL_T(KC_H),   SFT_T(KC_J),      GUI_T(KC_K),      ALT_T(KC_L),    KC_SCLN, KC_ENT,
+        _______, KC_Z,         ALGR_T(KC_X), KC_C,              KC_V,              KC_B,               KC_N,          KC_M,             KC_COMM,          ALGR_T(KC_DOT), KC_SLSH, _______,
+        _______, LCTL(KC_SPC), _______,      LT(_MEDIA,KC_TAB), LT(_LOWER,KC_ESC), LT(_MOUSE,KC_SPC),                 LT(_NAV,KC_BSPC), LT(_FUNC,KC_DEL), _______,        _______, _______
     ),
     [_LOWER] = LAYOUT_ortho_4x12_1x2uC(
         _______, KC_1,     KC_2,      KC_3,     KC_4,    KC_5,    KC_6,    KC_7,               KC_8,    KC_9,    KC_0,    _______,
@@ -57,8 +41,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_NAV] = LAYOUT_ortho_4x12_1x2uC(
         _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,              KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,
-        _______, _______, _______, _______, _______,             _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_RCBR, KC_PIPE,
-        _______, _______, _______, _______, _______,             _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______,
+        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,               KC_F5,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_RCBR, KC_PIPE,
+        _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,               KC_F10,  KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______,
         _______, _______, _______, _______, LT(_ADJUST,KC_TAB),  _______,          _______, _______, _______, _______, _______ 
     ),
     [_ADJUST] = LAYOUT_ortho_4x12_1x2uC(
@@ -93,3 +77,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(_LOWER,KC_ESC):
+            return TAPPING_TERM - 75;
+        case LT(_MEDIA,KC_TAB):
+            return TAPPING_TERM - 75;
+        case SFT_T(KC_ENT):
+            return TAPPING_TERM - 50;
+        case SFT_T(KC_F):
+            return TAPPING_TERM - 75;
+        case SFT_T(KC_J):
+            return TAPPING_TERM - 75;
+        default:
+            return TAPPING_TERM;
+    }
+}

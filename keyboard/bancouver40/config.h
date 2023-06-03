@@ -41,8 +41,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /// -- Home Row --
 // Configure the global tapping term (default: 200ms)
-#define TAPPING_TERM 200
+#define TAPPING_TERM 225
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
 // -- Enable different tapping term per key
 #define TAPPING_TERM_PER_KEY
+
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+#define CAPS_WORD_INVERT_ON_SHIFT

@@ -28,6 +28,14 @@ enum layers {
   _MOUSE,
 };
 
+const uint16_t PROGMEM qw_lang[] = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM vm_capsword[] = {KC_V, KC_M, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(qw_lang, LCTL(KC_SPC)),
+    COMBO(vm_capsword, CW_TOGG),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Qwerty
  * ,-------------------------------------------------------------------------------.
@@ -118,15 +126,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(_LOWER,KC_ESC):
-            return TAPPING_TERM - 75;
+            return TAPPING_TERM - 100;
         case LT(_MEDIA,KC_TAB):
-            return TAPPING_TERM - 75;
+            return TAPPING_TERM - 100;
         case SFT_T(KC_ENT):
-            return TAPPING_TERM - 50;
+            return TAPPING_TERM - 75;
         case SFT_T(KC_F):
-            return TAPPING_TERM - 75;
+            return TAPPING_TERM - 100;
         case SFT_T(KC_J):
-            return TAPPING_TERM - 75;
+            return TAPPING_TERM - 100;
         default:
             return TAPPING_TERM;
     }

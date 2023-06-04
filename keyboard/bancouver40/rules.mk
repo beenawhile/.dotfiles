@@ -17,6 +17,7 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
 CAPS_WORD_ENABLE = yes      # Activate CapsLock until finishing word
+COMBO_ENABLE = yes					# Activate Combo
 
 LAYOUTS = ortho_4x10
 

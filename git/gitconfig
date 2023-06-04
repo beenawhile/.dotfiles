@@ -1,5 +1,5 @@
 [user]
-	name = youngmin-gwon
+	name = Youngmin Gwon
 	email = youngmin-gwon@users.noreply.github.com
 [core]
 	excludesfile = ~/.gitignore
@@ -10,3 +10,5 @@
 	defaultBranch = main
 [commit]
   template = ~/.gitmessage
+[credential]
+  helper = store

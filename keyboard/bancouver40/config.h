@@ -47,5 +47,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // -- Enable different tapping term per key
 #define TAPPING_TERM_PER_KEY
 
+// -- capsword --
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 #define CAPS_WORD_INVERT_ON_SHIFT
+
+// -- power consumption for usage on iphone
+#define USB_MAX_POWER_CONSUMPTION 100
+

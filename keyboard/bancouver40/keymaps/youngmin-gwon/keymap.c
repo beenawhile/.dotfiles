@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_LOWER] = LAYOUT_ortho_4x10(
     KC_1,      KC_2,     KC_3,     KC_4,        KC_5,        KC_6,    KC_7,                KC_8,    KC_9,    KC_0,
     KC_COLN,   KC_MINS,  KC_EQL,   KC_DQUO,     KC_GRV,      KC_QUOT, KC_LPRN,             KC_RPRN, KC_LCBR, KC_RCBR,
-    KC_TILD,   KC_UNDS,  KC_PLUS,  KC_PIPE,     KC_BTN1,     KC_TILD, KC_LBRC,             KC_RBRC, KC_LT,   KC_GT,
+    KC_TILD,   KC_UNDS,  KC_PLUS,  KC_PIPE,     KC_BSLS,     KC_TILD, KC_LBRC,             KC_RBRC, KC_LT,   KC_GT,
     _______,   _______,  _______,  _______,     _______,     _______, LT(_ADJUST,KC_BSPC), _______, _______, _______
     ),
 

@@ -18,9 +18,6 @@
   "editor.fontFamily": "Hack Nerd Font, 'Courier New', monospace",
   "editor.inlayHints.fontFamily": "Hack Nerd Font",
   "debug.console.fontFamily": "Hack Nerd Font",
-  "workbench.iconTheme": "material-icon-theme",
-  "vscode-edge-devtools.mirrorEdits": true,
-  "vscode-edge-devtools.webhint": false,
   "files.associations": {
     "*.dart": "dart"
   },
@@ -45,14 +42,9 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "terminal.external.osxExec": "Alacritty.app",
   "editor.lineNumbers": "relative",
-  "workbench.productIconTheme": "fluent-icons",
   "redhat.telemetry.enabled": false,
-  "vsicons.dontShowNewVersionMessage": true,
   "liveshare.audio.startCallOnShare": true,
   "notebook.lineNumbers": "on",
-  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/.config/nvim/init.lua",
-  "whichkey.sortOrder": "alphabetically",
   "whichkey.bindings": [
     {
       "key": ";",
@@ -725,7 +717,6 @@
   "liveServer.settings.CustomBrowser": "firefox",
   "editor.formatOnSave": true,
   "git.openRepositoryInParentFolders": "never",
-  "workbench.colorTheme": "Mayukai Reversal",
   "[python]": {
     "editor.formatOnType": true
   },
@@ -1184,5 +1175,82 @@
   "settingsSync.ignoredSettings": [
     "-window.zoomLevel"
   ],
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "GitHub Dark",
+  "rest-client.environmentVariables": {
+    "$shared": {}
+  },
+  "cSpell.userWords": [
+    "Alacritty",
+    "Animatable",
+    "ARGB",
+    "codeowners",
+    "cupertino",
+    "dartdocs",
+    "Datagram",
+    "fpdart",
+    "fullscreen",
+    "gitmessage",
+    "gitmodules",
+    "glsl",
+    "Gwon",
+    "lerp",
+    "liveshare",
+    "LTRB",
+    "LTWH",
+    "microtask",
+    "neovim",
+    "noescape",
+    "nvim",
+    "pbenum",
+    "pbgrpc",
+    "pbjson",
+    "PLAIF",
+    "proto",
+    "protobuf",
+    "protos",
+    "pubspec",
+    "Puzzy",
+    "raczzalan",
+    "Reclip",
+    "rgba",
+    "riverpod",
+    "roadmap",
+    "scrollbars",
+    "sponsers",
+    "surrounddelete",
+    "surroundreplace",
+    "TLDR",
+    "unstage",
+    "vsintellicode",
+    "vsync",
+    "webgl",
+    "webhint",
+    "whichkey",
+    "whitespaces",
+    "Youngmin"
+  ],
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]",
+    "REF"
+  ],
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.folders.associations": {
+    "domain": "container",
+    "presentation": "mobile",
+    "repository": "interface",
+    "infrastructure": "plugin",
+    "view_model": "class",
+    "ui": "layout",
+    "protos": "proto",
+  }
 }

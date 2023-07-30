@@ -149,4 +149,8 @@
         "command": "workbench.action.terminal.new",
         "when": "terminalFocus && terminalProcessSupported || terminalWebExtensionContributedProfile"
     },
+    {
+        "key": "cmd+n", // "cmd+n" on mac
+        "command": "extension.advancedNewFile",
+    }
 ]

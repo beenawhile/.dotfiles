@@ -45,14 +45,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
  * |   Z   |   X   |   C   |   V   |   B   |   N   |   M   |   ,   |   .   |   /   |
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
- * | C+SPC | Ctrl  |  Alt  | ESC/L2| Space |Ent/Sft|BSPC/L3| Raise | RCtrl |  RAlt |
+ * |       |       |       | ESC/L2| Space |Ent/Sft|BSPC/L3|       |       |       |
  * `-------------------------------------------------------------------------------'
  */
   [_QWERTY] = LAYOUT_ortho_4x10(
-    KC_Q,         KC_W,         KC_E,              KC_R,              KC_T,               KC_Y,           KC_U,             KC_I,             KC_O,        KC_P,
-    KC_A,         ALT_T(KC_S),  GUI_T(KC_D),       SFT_T(KC_F),       CTL_T(KC_G),        CTL_T(KC_H),    SFT_T(KC_J),      GUI_T(KC_K),      ALT_T(KC_L), KC_SCLN,
-    KC_Z,         KC_X,         KC_C,              KC_V,              KC_B,               KC_N,           KC_M,             KC_COMM,          KC_DOT,      KC_SLSH,
-    LCTL(KC_SPC), _______,      LT(_MEDIA,KC_TAB), LT(_LOWER,KC_ESC), LT(_MOUSE,KC_SPC),  SFT_T(KC_ENT), LT(_NAV,KC_BSPC),  LT(_FUNC,KC_DEL), _______,     _______
+    KC_Q,    KC_W,         KC_E,              KC_R,              KC_T,               KC_Y,           KC_U,             KC_I,             KC_O,        KC_P,
+    KC_A,    ALT_T(KC_S),  GUI_T(KC_D),       SFT_T(KC_F),       CTL_T(KC_G),        CTL_T(KC_H),    SFT_T(KC_J),      GUI_T(KC_K),      ALT_T(KC_L), KC_SCLN,
+    KC_Z,    KC_X,         KC_C,              KC_V,              KC_B,               KC_N,           KC_M,             KC_COMM,          KC_DOT,      KC_SLSH,
+    _______, _______,      LT(_MEDIA,KC_TAB), LT(_LOWER,KC_ESC), LT(_MOUSE,KC_SPC),  SFT_T(KC_ENT), LT(_NAV,KC_BSPC),  LT(_FUNC,KC_DEL), _______,     _______
     ),
 
 /* Lower
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
  * |   ~   |   _   |   +   |   |   |   \   |   ~   |   [   |   ]   |   <   |   >   |
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
- * | C+SPC| Ctrl   | Alt   |       | Lower | Space |Ent/Sft| Raise | RCtrl |  RAlt |
+ * |       |       |       |       | Lower | Space |       |       |       |       |
  * `-------------------------------------------------------------------------------'
  */
   [_LOWER] = LAYOUT_ortho_4x10(
@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
  * |  F6   |  F7   |  F8   |  F9   |  F10  | Home  | P Dwn | P Up  |  End  |   >   |
  * |-------+-------+-------+-------+-------+-------+-------+-------+-------+-------|
- * | C+SPC| Ctrl   | Alt   |       | Lower | Space |       | Raise | RCtrl |  RAlt |
+ * |       |       |       |       | Lower | Space |       |       |       |       |
  * `-------------------------------------------------------------------------------'
  */
   [_NAV] = LAYOUT_ortho_4x10(

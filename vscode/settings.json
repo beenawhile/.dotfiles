@@ -1245,6 +1245,7 @@
     "Datagram",
     "fpdart",
     "fullscreen",
+    "githook",
     "gitmessage",
     "gitmodules",
     "glsl",
@@ -1281,17 +1282,21 @@
     "TLDR",
     "unfocus",
     "unstage",
+    "uppercased",
     "vsintellicode",
     "vsync",
     "webgl",
     "webhint",
+    "websockets",
     "whichkey",
     "whitespaces",
     "wordlist",
     "Youngmin"
   ],
   "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
   },
   "todo-tree.general.tags": [
     "BUG",
@@ -1326,4 +1331,6 @@
     "root"
   ],
   "explorer.compactFolders": false,
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native",
 }

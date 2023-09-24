@@ -179,6 +179,41 @@ ex=:\
 *.pdf=:\
 *.nix=:\
 "
-export LC_ALL=en_US.UTF-8
 
+# dotfile-related
+export PATH="$PATH:/usr/local/sbin:$DOTFILES/bin:$HOME/.local/bin"
+# -----------------------
+
+# starship
+eval "$(starship init zsh)"
+# -----------------------
+
+# brew
+export PATH=/opt/homebrew/bin:$PATH
+# -----------------------
+
+# docker: x11
 export DOCKER_DISPLAY=$(ifconfig en0 | grep inet\ | awk '{ print $2 ":0" }')
+# -----------------------
+
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# -----------------------
+
+# direnv
+eval "$(direnv hook zsh)"
+# -----------------------
+
+# dart
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH":"$(asdf where flutter)/bin/cache/dart-sdk"
+## [Completion] 
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/admin/.dart-cli-completion/zsh-config.zsh ]] && . /Users/admin/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+# -----------------------
+
+# google cloud
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+# -----------------------

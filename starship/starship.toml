@@ -24,9 +24,10 @@ command_timeout = 1000
 disabled = false
 
 [username]
-style_user = 'white bold'
-style_root = 'white bold'
-format = 'user: [$user]($style)'
+show_always = true
+style_user = "bg:#9A348E"
+style_root = "bg:#9A348E"
+format = '[$user]($style) '
 disabled = false
 
 [battery]
@@ -42,6 +43,12 @@ style = "blue bold"
 read_only = " "
 truncation_length = 4
 truncate_to_repo = false
+
+[directory.substitutions]
+"Documents" = "📄 "
+"Downloads" = "📥 "
+"Music" = "🎜 "
+"Pictures" = "📷 "
 
 [character]
 success_symbol = "[❯](white)"
@@ -97,3 +104,8 @@ format = '[$symbol($version)]($style)'
 [golang]
 format = '[$symbol($version)]($style)'
 version_format = 'v${raw}'
+
+[docker_context]
+symbol = "🐳 "
+style = "bg:#06969A"
+format = '[[ $symbol $context ](bg:#06969A)]($style) $path'

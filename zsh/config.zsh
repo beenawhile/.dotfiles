@@ -184,10 +184,6 @@ ex=:\
 export PATH="$PATH:/usr/local/sbin:$DOTFILES/bin:$HOME/.local/bin"
 # -----------------------
 
-# starship
-eval "$(starship init zsh)"
-# -----------------------
-
 # brew
 export PATH=/opt/homebrew/bin:$PATH
 # -----------------------
@@ -216,4 +212,8 @@ export PATH="$PATH":"$(asdf where flutter)/bin/cache/dart-sdk"
 # google cloud
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+# -----------------------
+
+# starship
+eval "$(starship init zsh)"
 # -----------------------

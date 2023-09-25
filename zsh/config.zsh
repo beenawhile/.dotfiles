@@ -198,6 +198,7 @@ export DOCKER_DISPLAY=$(ifconfig en0 | grep inet\ | awk '{ print $2 ":0" }')
 
 # direnv
 eval "$(direnv hook zsh)"
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 # -----------------------
 
 # dart

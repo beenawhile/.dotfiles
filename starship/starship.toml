@@ -4,6 +4,7 @@ $username\
 $hostname\
 $directory\
 $git_branch\
+$custom\
 $git_state\
 $git_status\
 $git_metrics\
@@ -109,3 +110,11 @@ version_format = 'v${raw}'
 symbol = "🐳 "
 style = "bg:#06969A"
 format = '[[ $symbol $context ](bg:#06969A)]($style) $path'
+
+[custom.flavor]
+command = "echo $(cat .envrc.context)"
+when = "test -f .envrc.context"
+format = '[$symbol($output )]($style)'
+symbol = '☁️ '
+style = 'bold green'
+# require_repo = true

@@ -1,5 +1,4 @@
 tap "adoptopenjdk/openjdk"
-tap "dart-lang/dart"
 tap "epk/epk"
 tap "felixkratz/formulae"
 tap "fluttergen/tap"
@@ -71,7 +70,6 @@ cask "alt-tab"
 cask "betterdisplay"
 cask "calibre"
 cask "cheatsheet"
-cask "devtoys"
 cask "discord", args: { appdir: "~/Applications" }
 cask "eul"
 cask "firefox"

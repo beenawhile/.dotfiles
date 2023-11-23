@@ -2,8 +2,7 @@ alias c='clear'
 alias rm='trash -v'
 alias ls='exa'
 alias ll='exa -alh'
-alias vim='nvim'
-alias vi='nvim'
+alias vi='hx'
 alias cat='bat'
 alias trim="awk '{\$1=\$1;print}'"
 alias ta='tmux attach -t'
@@ -36,7 +35,7 @@ alias gla=pretty_git_log_all
 alias git-current-branch="git branch | grep \* | cut -d ' ' -f2"
 alias grc='git rebase --continue'
 alias gra='git rebase --abort'
-alias gec='git status | grep "both modified:" | cut -d ":" -f 2 | trim | xargs nvim -'
+alias gec='git status | grep "both modified:" | cut -d ":" -f 2 | trim | xargs hx -'
 alias gcan='gc --amend --no-edit'
 
 alias gp="git push -u 2>&1 | tee >(cat) | grep \"pull/new\" | awk '{print \$2}' | xargs open"
@@ -125,5 +124,5 @@ copy-line() {
 }
 
 open-at-line() {
-  nvim $(rg --line-number . | sk --delimiter ':' --preview 'bat --color=always --highlight-line {2} {1}' | awk -F ':' '{print "+"$2" "$1}' | sed 's/^\s+//')
+  hx $(rg --line-number . | sk --delimiter ':' --preview 'bat --color=always --highlight-line {2} {1}' | awk -F ':' '{print "+"$2" "$1}' | sed 's/^\s+//')
 }

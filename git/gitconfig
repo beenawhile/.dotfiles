@@ -1,6 +1,6 @@
 [user]
 	name = Youngmin Gwon
-	email = youngmin-gwon@users.noreply.github.com
+	email = youngmin.gwon@gmail.com
 [core]
 	excludesfile = ~/.gitignore
 	editor = hx

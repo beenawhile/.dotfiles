@@ -2,8 +2,8 @@
 # GNU core utilities
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export VISUAL=nvim
-export EDITOR=nvim
+export VISUAL=hx
+export EDITOR=hx
 
 # set various options
 setopt AUTO_CD
@@ -213,13 +213,6 @@ export PATH="$PATH":"$(asdf where flutter)/bin/cache/dart-sdk"
 # google cloud
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-# -----------------------
-
-# Android SDK Manager
-export ANDROID_SDK_ROOT=$HOME/Android/SDK
-export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-# - to make adb avaialbe
 # -----------------------
 
 # starship

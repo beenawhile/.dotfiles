@@ -48,7 +48,12 @@
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.factorypath": true
+    "**/.factorypath": true,
+    "**/.trunk/*actions/": true,
+    "**/.trunk/*logs/": true,
+    "**/.trunk/*notifications/": true,
+    "**/.trunk/*out/": true,
+    "**/.trunk/*plugins/": true
   },
   "[dart]": {
     "editor.formatOnSave": true,
@@ -772,7 +777,8 @@
   "liveServer.settings.CustomBrowser": "firefox",
   "git.openRepositoryInParentFolders": "never",
   "[python]": {
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "dance.menus": {
     "object": {
@@ -1336,4 +1342,13 @@
   "explorer.compactFolders": false,
   "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
   "lldb.launch.expressions": "native",
+  "python.formatting.provider": "none",
+  "files.watcherExclude": {
+    "**/.trunk/*actions/": true,
+    "**/.trunk/*logs/": true,
+    "**/.trunk/*notifications/": true,
+    "**/.trunk/*out/": true,
+    "**/.trunk/*plugins/": true
+  },
+  "editor.defaultFormatter": "trunk.io",
 }

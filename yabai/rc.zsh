@@ -36,7 +36,6 @@ yabai -m config right_padding                15
 yabai -m config window_gap                   15
 
 # apps to not manage (ignore)
-yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="Messages" app="^Messages$" manage=off
 yabai -m rule --add label="App Store" app="^App Store$" manage=off
 yabai -m rule --add label="Software Update" title="Software Update" manage=off

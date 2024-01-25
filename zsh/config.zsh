@@ -218,3 +218,7 @@ source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 # starship
 eval "$(starship init zsh)"
 # -----------------------
+# Android SDK Manager
+export ANDROID_SDK_ROOT=$HOME/Library/Android/SDK
+export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools

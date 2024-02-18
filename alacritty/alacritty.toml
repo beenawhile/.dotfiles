@@ -1,0 +1,258 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[[colors.indexed_colors]]
+color = "0xff9e64"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xdb4b4b"
+index = 17
+
+[colors.bright]
+black = "0x414868"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xc0caf5"
+yellow = "0xe0af68"
+
+[colors.normal]
+black = "0x15161E"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xa9b1d6"
+yellow = "0xe0af68"
+
+[colors.primary]
+background = "0x1a1b26"
+foreground = "0xc0caf5"
+
+[font]
+size = 16.0
+
+[font.bold]
+style = "Semibold"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "D2Coding"
+style = "Regular"
+
+[[keyboard.bindings]]
+key = "T"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["new-window"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "W"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["kill-pane"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Y"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["split-window"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "X"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["split-window", "-h"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["next-window"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["previous-window"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["select-window", "-t", "0"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key1"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["select-window", "-t", "1"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key2"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["select-window", "-t", "2"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key3"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["select-window", "-t", "3"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key4"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["select-window", "-t", "4"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key5"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["select-window", "-t", "5"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key6"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["select-window", "-t", "6"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key7"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["select-window", "-t", "7"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key8"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["select-window", "-t", "8"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "Key9"
+mods = "Command"
+
+[keyboard.bindings.command]
+args = ["select-window", "-t", "9"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "H"
+mods = "Control|Shift"
+
+[keyboard.bindings.command]
+args = ["resize-pane", "-L", "5"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "J"
+mods = "Control|Shift"
+
+[keyboard.bindings.command]
+args = ["resize-pane", "-D", "5"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "K"
+mods = "Control|Shift"
+
+[keyboard.bindings.command]
+args = ["resize-pane", "-U", "5"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Control|Shift"
+
+[keyboard.bindings.command]
+args = ["resize-pane", "-R", "5"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "M"
+mods = "Control|Shift"
+
+[keyboard.bindings.command]
+args = ["resize-pane", "-Z"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "H"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["select-pane", "-L"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "J"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["select-pane", "-D"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "K"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["select-pane", "-U"]
+program = "/opt/homebrew/bin/tmux"
+
+[[keyboard.bindings]]
+key = "L"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["select-pane", "-R"]
+program = "/opt/homebrew/bin/tmux"
+
+[scrolling]
+history = 10000
+
+[window]
+decorations = "buttonless"
+opacity = 0.9
+
+[window.padding]
+x = 16
+y = 16

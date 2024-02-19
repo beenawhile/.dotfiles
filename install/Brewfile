@@ -57,7 +57,6 @@ brew "marksman"
 brew "mas"
 brew "ncdu"
 brew "neofetch"
-brew "neovim"
 brew "nghttp2"
 brew "pandoc"
 brew "pass"
@@ -108,7 +107,6 @@ cask "openinterminal"
 cask "raycast"
 cask "visual-studio-code"
 cask "xquartz"
-mas "AdBlock Pro", id: 1018301773
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541

@@ -20,3 +20,5 @@ zinit ice blockf
 zinit light zsh-users/zsh-completions
 zinit load zdharma-continuum/history-search-multi-word
 
+zinit ice wait lucid depth=1
+zinit light MichaelAquilina/zsh-you-should-use

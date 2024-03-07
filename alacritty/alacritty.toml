@@ -43,7 +43,7 @@ style = "Semibold"
 style = "Italic"
 
 [font.normal]
-family = "D2Coding"
+family = "MesloLGS NF"
 style = "Regular"
 
 [[keyboard.bindings]]
